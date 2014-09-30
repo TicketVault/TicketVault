@@ -1,0 +1,11 @@
+http://www.freemysqlhosting.net
+412277983@qq.com
+h6nLG8yuZe1g
+
+
+http://www.phpmyadmin.co
+Host: sql3.freemysqlhosting.net
+Database name: sql353761
+Database user: sql353761
+Database password: bR7%eL9*
+Port number: 3306
