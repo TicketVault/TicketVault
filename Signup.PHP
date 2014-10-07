@@ -5,14 +5,13 @@
 	//choose the database you want to use or you can ignore this line and do DATABASE.table inside the mysqli_query();
 	mysqli_query($dbhandle,"USE sql353761");
 
-	$username=$_POST["username"];
+	$username=$_POST["name"];
 	$email=$_POST["email"];
-	$password=$_POST["password"];
 
 
-	$SQLString = "INSERT INTO signup (user,email,password)
-	VALUES( '$username','$email','$password')";
+	$SQLString = "INSERT INTO signup (Username,Email)
+	VALUES( '$username','$email')";
 	mysqli_query($dbhandle, $SQLString);
-	header("Location: home.html");
+	header("Location: index.html");
 	die();	
 ?>
