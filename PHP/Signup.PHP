@@ -8,10 +8,16 @@
 	$username=$_POST["name"];
 	$email=$_POST["email"];
 
-
+	$result = mysql_query("SELECT * FROM signup WHERE Username='$username'");
+	$num_rows = mysql_num_rows($result);
+	if($num_rows==0){
 	$SQLString = "INSERT INTO signup (Username,Email)
 	VALUES( '$username','$email')";
 	mysqli_query($dbhandle, $SQLString);
+	}
+	else{
+	
+	}
 	header("Location: index.html");
 	die();	
 ?>
