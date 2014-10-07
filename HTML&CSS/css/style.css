@@ -1231,6 +1231,7 @@
 		padding: 12em 0 20em 0;
 		text-align: center;
 	}
+	
 
 		#banner :last-child {
 			margin-bottom: 0;
@@ -1250,6 +1251,17 @@
 		#banner p {
 			font-size: 1.25em;
 			margin-bottom: 1.75em;
+		}
+		#banner input[type="text"]{
+			color: #393636;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			margin-left: 100px;
+		}
+		#banner input[type="submit"]{
+			margin-right: 10px;
+			margin-bottom: 10px;
+			margin-left: 100px;
 		}
 
 		#banner input[type="submit"],
