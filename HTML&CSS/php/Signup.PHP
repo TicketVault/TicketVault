@@ -31,7 +31,7 @@
 				$SQLString = "INSERT INTO signup (Username,Email,Password,Address) 
 				VALUES( '$username','$email', '$password', '$address')";
 				mysqli_query($dbhandle, $SQLString);
-				header("Location: index.html");
+				header("Location: ../index.html");
 				die();
 			}
 		}
