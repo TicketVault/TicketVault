@@ -43,7 +43,7 @@
 									Username: <input type="text" name="firstname"><br>
 									Password: <input type="password" name="pwd">
 								</form>
-								<li><a href="elements.html">Login</a></li>
+								<li><a href="#">Login</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -57,53 +57,32 @@
 					
 				</header>
 				<div class="box">
-					<form method="post" action="PHP/signup.php">
-						<div class="row uniform half collapse-at-2">
-							<div class="6u">
-								<input type="text" name="name" id="name" value="" placeholder="Name" />
+					<form method="post" action="Signup.php">
+						<div class="row uniform half">
+							<div class="12u">
+								<input type="text" name="username" id="username" value="" placeholder="User Name" />
 							</div>
-							<div class="6u">
-								<input type="email" name="email" id="email" value="" placeholder="Email" />
+							<div class="12u">
+								<input type="text" name="email" id="email" value="" placeholder="Email" />
 							</div>
 						</div>
 						<div class="row uniform half">
 							<div class="12u">
-								<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
+								<input type="text" name="password" id="password" value="" placeholder="Password" />
 							</div>
 						</div>
 						<div class="row uniform half">
 							<div class="12u">
-								<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+								<input type = "text" name="address" id="address" placeholder="Enter your Address" rows="6"></textarea>
 							</div>
 						</div>
 						<div class="row uniform">
 							<div class="12u">
 								<ul class="actions align-center">
 									
-									<script> 
-										function sendInfo() {
-											if (window.XMLHttpRequest)
-											{// code for IE7+, Firefox, Chrome, Opera, Safari
-												xmlhttp=new XMLHttpRequest();
-											}
-											else
-											{// code for IE6, IE5
-												xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-											}
-											xmlhttp.onreadystatechange=function()
-											{
-												if (xmlhttp.readyState==4 && xmlhttp.status==200)
-												{
-													document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-													}
-												}
-											
-												xmlhttp.open("GET", "locathost:8080",true);
-												xmlhttp.send();
-											} 
-										}
-									</script>
-									<button onclick="sendInfo()">Sign up now</button>
+									<input type="submit" name = "submit" id="button" value="submit"/>
+									
+						
 								</ul>
 							</div>
 						</div>
