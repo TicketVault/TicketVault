@@ -13,11 +13,11 @@
 	$result = mysqli_query($dbhandle, $SQLString);
 	$count=mysqli_num_rows($result);
 	if($count==1){
-		header("Location: ../home.html");
+		header("Location: ../index.html");
 		die();
 	}
 	else{
-		header("Location: ../login.html");
+		header("Location: ../index.html");
 		die();
 	}	
 ?>
