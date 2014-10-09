@@ -17,6 +17,9 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="js/dropdown.js"></script>
+
+		
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -34,22 +37,26 @@
 						<li><a href="index.html" >Manage Event</a></li>
 						<li><a href="index.html" >Upcoming Event</a></li>
 						<li><a href="signup.html" class="button">Sign Up</a></li>
-
 						<li>
-							<a href="" class="icon fa-angle-down">Login</a>
+							<a id="login-trigger" href="" class="icon fa-angle-down">Login</a>
+							<div id="login-content">
 							<ul>
 								<form>
 									Username: <input type="text" name="firstname"><br>
 									Password: <input type="password" name="pwd">
 								</form>
 								<li><a href="#">Login</a></li>
-							</ul>
+							</ul>   
+							</div>                     
+                
 						</li>
 						
 						
 					</ul>
 				</nav>
 			</header>
+			
+			
 
 			
 		<!-- banner -->

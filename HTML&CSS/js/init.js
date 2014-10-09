@@ -80,6 +80,7 @@
 		// Dropdowns.
 			$('#nav > ul').dropotron({
 				alignment: 'right'
+				
 			});
 
 		// Header.
@@ -105,5 +106,6 @@
 			}
 		
 	});
+
 
 })(jQuery);
