@@ -9,7 +9,7 @@
 	$password=$_POST["password"];
 
 	
-	$SQLString = "SELECT * FROM signup WHERE Username='$username' AND Password='$password'";
+	$SQLString = "SELECT * FROM Signup WHERE Username='$username' AND Password='$password'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$count=mysqli_num_rows($result);
 	if($count==1){
