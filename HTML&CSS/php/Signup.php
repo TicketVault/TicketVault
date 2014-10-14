@@ -25,7 +25,7 @@
 				VALUES( '$username','$email', '$password', '$address')";
 				mysqli_query($dbhandle, $SQLString);
 		
-				header("Location: success.html");
+				header("Location: signup-success.html");
 				die();
 	
 			}
