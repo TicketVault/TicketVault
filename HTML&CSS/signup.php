@@ -15,16 +15,25 @@
 		
 		if ($password != $password_validate) {
 			
-			printErr('passwords do not match!');
+			printErr('Passwords do not match!');
 		}
 
-		$result = mysqli_query($dbhandle, "SELECT * FROM signup WHERE Username=$username");
+		$result_username = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username=$username");
+		$result_email = mysqli_query($dbhandle, "SELECT * FROM account WHERE Email=$email");
 		
+		if (mysqli_num_rows($result_username) > 0) {
 		
+			hasDuplicateUsername ();
+		}
+		
+		else if (mysqli_num_rows($result_email) > 0) {
+		
+			hasDuplicateEmail ();	
+		}
 	
-		if(!(mysqli_num_rows($result) > 0)) {
+		else {
 
-			$SQLString = "INSERT INTO signup (Username,Email,Password)
+			$SQLString = "INSERT INTO account (Username,Email,Password)
 			VALUES( '$username','$email', '$password')";
 			mysqli_query($dbhandle, $SQLString);
 		
@@ -32,9 +41,7 @@
 			die();
 	
 		}
-		else {
-			hasDuplicateAccount ();
-		}
+		
 	}
 	
 	else {
@@ -57,12 +64,20 @@
 	
 	}
 	
-	/*display duplicate account error*/
+	/*display duplicate username error*/
 	
-	function hasDuplicateAccount () {
+	function hasDuplicateUsername () {
 	
-		printErr('Username is duplicates');
+		printErr('Username is duplicated');
 	}
+	
+	/*display duplicate username error*/
+	
+	function hasDuplicateEmail () {
+	
+		printErr('Email is duplicated');
+	}
+	
 	/*display incomplete sign up error*/
 	
 	function isIncomplete () {
@@ -73,16 +88,17 @@
 			
 		}
 		
+		else if (empty($_POST['email'])) {
+			
+			printErr('Email cannot be empty');
+		}
+		
 		else if (empty($_POST['password'])) {
 		
 			printErr('Password cannot be empty');
 			
 		}
 		
-		else if (empty($_POST['email'])) {
-			
-			printErr('Email cannot be empty');
-		}
 		
 		else if (empty($_POST['password_validate'])) {
 			
