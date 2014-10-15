@@ -1,5 +1,8 @@
 <?php
-
+	
+	/*Author: Chengkang Xu*/
+	/*Handle interconnection between server and profile(editMode) page*/
+	
 	$dbhandle = mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
 	mysqli_query($dbhandle,"USE sql353761");
 	
@@ -42,6 +45,8 @@
 		
 		if ((!empty($_POST['birthdayMonth'])) && (!empty($_POST['birthdayDay'])) && (!empty($_POST['birthdayYear']))) {
 			
+			$birthday = $_POST['birthdayMonth'] . "/" . $_POST['birthdayDay'] . "/" . $_POST['birthdayYear'];
+			update($dbhandle, "Birthday", $birthday, $username);
 		}
 		
 		
