@@ -1,8 +1,5 @@
 <?php
 
-	/*Author: Chengkang Xu*/
-	/*Handle interconnection between server and profile page*/
-
 	$dbhandle = mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
 	mysqli_query($dbhandle,"USE sql353761");
 
