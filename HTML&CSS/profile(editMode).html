@@ -60,14 +60,14 @@
   
 		<div class="us_contentBox">
 		
-		<form method="post" action="profile.php">
+		<form method="post" action="profile(editMode).php">
 
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Username： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="username" type="text" value=" " class="formBorder" readonly/>
+                  <input name="username" type="text" value="1" class="formBorder" readonly/>
                   </td>
                 </tr>
 				
@@ -91,15 +91,7 @@
                   <input name="lastname" type="text" value placeholder="Enter the Last Name"/>
                   </td>
                 </tr>
-                <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Gender： </td>
-                  <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input id="Male" type="radio" name="gender" checked>
-                  <label for="Male">Male</label>
-                  <input id="Female" type="radio" name="gender">
-                  <label for="Female">Female</label>
-                  </td>
-                </tr>
+               
                 
            
                 <tr>
@@ -119,44 +111,20 @@
                 	</td>
                 </tr>
                 
-                 <tr>
-                  <td width="28%" align="right" bgcolor="#FFFFFF">Phone： </td>
-                  <td width="72%" align="left" bgcolor="#FFFFFF">
-                  <div class="row uniform half collpase-at-2">
-                  <div class="3u">
-                  <input name="areacode" type="text" value placeholder="Area Code">
-                  </div>
-                  <div class="3u">
-                  <input name="prefix" type="text" value placeholder="Prefix">
-                  </div>
-                  <div class="3u">
-                  <input name="linenumber" type="text" value placeholder="Line Number">
-                  </div>
-                  </div>
+                <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Phone number： </td>
+                  <td width="80%" align="left" bgcolor="#FFFFFF">
+                  <input name="phone" type="text" value placeholder="Enter phone number"/>
                   </td>
                 </tr>
-               
                 
-                                <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Mailing Address： </td>
-                  <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="street" type="text" value placeholder="Street Name"/>
-                </td>
                 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF"></td>
-                  <td width="80" align="left" bgcolor="#FFFFFF">
-                  <div class="row uniform half collpase-at-2">
-                  <div class="4u">
-                  <input name="city" type="text" value placeholder="City"/>
-                  </div>
-                  <div class="4u">
-                  <input name="state" type="text" value placeholder="State"/>
-                  </div>
-                  <div class="4u">
-                  <input name="zipcode" type="text" value placeholder="Zip Code"/>
-                  </div>
-                  </div>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Mailing address： </td>
+                  <td width="80%" align="left" bgcolor="#FFFFFF">
+                  <input name="address" type="text" value placeholder="Enter mailing address"/>
                   </td>
+                </tr>
+                 
 
 		</table>
 			<h3>Change Password</h3>
@@ -176,7 +144,7 @@
         		<tr>
       				<td colspan="2" align="center" bgcolor="#FFFFFF">
         			<input name="act" type="hidden" value="act_edit_password" />
-        			<input name="submit" type="submit" class="bnt_number4" value="Confirm Change" />
+        			<input type="submit" name = "submit" id="button" value="submit changes"/>
 					</td>
 				</tr>
 			</table>
