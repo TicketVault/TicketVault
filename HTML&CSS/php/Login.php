@@ -13,11 +13,11 @@
 	$result = mysqli_query($dbhandle, $SQLString);
 	$count=mysqli_num_rows($result);
 	if($count==1){
-		header("Location: ../success.html");
+		header("Location: ../loginsccess.html");
 		die();
 	}
 	else{
-		header("Location: ../index.html");
+		header("Location: ../loginerror.html");
 		die();
 	}	
 ?>
