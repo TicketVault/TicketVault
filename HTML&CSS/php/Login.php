@@ -13,6 +13,8 @@
 	$result = mysqli_query($dbhandle, $SQLString);
 	$count=mysqli_num_rows($result);
 	if($count==1){
+		session_start();
+		$_SESSION['loginuser']=$username;
 		header("Location: ../loginsccess.html");
 		die();
 	}
