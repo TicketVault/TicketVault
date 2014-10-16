@@ -36,6 +36,7 @@
 			<header id="header" class="alt">
 				<h1><a href="index.html">TicketVault</a></h1>
 				<?php
+					session_start();
 					if(isset($_SESSION['loginuser'])){
 						echo "<nav id="."nav".">";
 						echo "<ul>";
