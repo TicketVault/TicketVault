@@ -13,7 +13,7 @@
 	$result = mysqli_query($dbhandle, $SQLString);
 	$count=mysqli_num_rows($result);
 	if($count==1){
-		header("Location: ../index.html");
+		header("Location: ../success.html");
 		die();
 	}
 	else{
