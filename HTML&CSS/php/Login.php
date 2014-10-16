@@ -15,7 +15,7 @@
 	if($count==1){
 		session_start();
 		$_SESSION['loginuser']=$username;
-		header("Location: ../index(loginMode).html");
+		header("Location: ../index.html");
 		die();
 	}
 	else{
