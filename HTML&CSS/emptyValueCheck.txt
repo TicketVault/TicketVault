@@ -1,9 +1,0 @@
-<script type="text/javascript">
-	function ValidateForm(frm) {
-		if (frm.username.value == "") {alert('Username is required.');frm.username.focus();return false;}
-		if (frm.email.value == "") {alert('Email is required.');frm.email.focus();return false;}
-		if (frm.password.value == "") {alert('Password is required.');frm.password.focus();return false;}
-		if (frm.password_validate.value != frm.password.value) {alert('Password does not match.');frm.password_validate.focus();return false;}
-		return true; 
-	}
-</script>
