@@ -82,9 +82,11 @@
  				printErr ('Passwords do not match');
  			}
  			
- 			$result_password = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username=$username AND Password=$original_password");
+ 			$result = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username=$username");
  			
- 			if (mysqli_num_rows($result_password) < 0) {
+ 			$result_password = mysqli_fetch_array($result);
+ 			
+ 			if ($original_password != $result_password['Password']) {
  		
  				printErr ('Password is incorrect');
  			}
@@ -119,7 +121,7 @@
  		
  		echo '<html>
  				<head>
- 					<meta http-equiv="refresh" content="3;url=signup.html" />
+ 					<meta http-equiv="refresh" content="3;url=profile(editMode).php" />
  				</head>
  				<body>';
      	echo "$_err";

@@ -51,7 +51,7 @@
 		
 		echo '<html>
 				<head>
-					<meta http-equiv="refresh" content="3;url=signup.html" />
+					<meta http-equiv="refresh" content="3;url=signup.php" />
 				</head>
 				<body>';
     	echo "$_err";
