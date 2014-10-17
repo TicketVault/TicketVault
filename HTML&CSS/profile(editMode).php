@@ -35,7 +35,7 @@
 						echo "<nav id="."nav".">";
 						echo "<ul>";
 						echo "<li><a href="."index.php"." >Home</a></li>";
-						echo "<li><a href=".""." >Manage Event</a></li>";
+						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";
 						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
 						echo "<li><a href="."profile.php"." >Profile</a></li>";
 						echo "<li><a href="."php/Logout.php"." class="."button".">logout</a></li>";
@@ -46,7 +46,7 @@
 						echo "<nav id="."nav".">";
 						echo "<ul>";
 						echo "<li><a href="."index.php"." >Home</a></li>";
-						echo "<li><a href=".""." >Manage Event</a></li>";
+						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";
 						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
 						echo "<li><a href="."signup.php"." class="."button".">Sign Up</a></li>";
 						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
