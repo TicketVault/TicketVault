@@ -66,7 +66,7 @@
 						<section class="box">
 							<h3>User Profile</h3>
                             <ul class="actions vertical small">
-                            	<li> <a href="profile(editMode).html">#Edit Your Profile</a></li>
+                            	<li> <a href="profile(editMode).php">#Edit Your Profile</a></li>
                             </ul>
   
 <?php
