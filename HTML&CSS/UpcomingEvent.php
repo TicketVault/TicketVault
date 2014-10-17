@@ -73,7 +73,7 @@
 									
 										<thead>
 											<tr>
-												<th>Name</th>
+												<th>Events Name</th>
 												<th>Organization name</th>
 												<th>Price</th>
 											</tr>
@@ -88,7 +88,7 @@
 											while($row=mysqli_fetch_array($result)){
 												echo '<tr>';
 												echo '<td>';
-												echo $row['Eventname'];
+												echo '<a href = "blank.html">'.$row['Eventname'].'</a><br>';
 												echo '</td>';
 												echo '<td>';
 												echo $row['OrganizationName'];
