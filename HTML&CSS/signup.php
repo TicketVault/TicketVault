@@ -36,7 +36,6 @@
 		<!-- Header -->
 			<header id="header">
 				<h1><a href="index.html">TicketVault</a></h1>
-<<<<<<< HEAD
 				<nav id="nav">
 					<ul>
 						<li><a href="index.php">Home</a></li>
@@ -46,7 +45,6 @@
 						<li><a href="login.php" class="button">Login</a></li>
 					</ul>
 				</nav>
-=======
 				<?php
 					session_start();
 					if(isset($_SESSION['loginuser'])){
@@ -72,7 +70,6 @@
 						echo "</nav>";
 					}
 				?>
->>>>>>> ec546b17d8bb8aec08ef0465c154775118d5cdf5
 			</header>
 
 		<!-- Main -->
