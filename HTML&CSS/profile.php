@@ -19,4 +19,18 @@
 		$user['address']=$row['address'];
 		$user['phone']=$row['phone'];
 	}
+	
+	function printErr ($_err) {
+
+		
+		echo '<html>
+				<head>
+					<meta http-equiv="refresh" content="3;url=signup.html" />
+				</head>
+				<body>';
+    	echo "$_err";
+		die();
+	
+	}
+
 ?>

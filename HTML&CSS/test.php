@@ -72,9 +72,8 @@
 
 	$SQLString = "SELECT * FROM account WHERE Username='$user'";
 	$result = mysqli_query($dbhandle, $SQLString);
-	$row = mysql_fetch_assoc($sql);
 	
-	while($row = mysqli_fetch_array($result)) {
+	while($row = mysqli_fetch_assoc($result)) {
 		$user['username']=$row['username'];
 		$user['firstname']=$row['username'];
 		$user['lastname']=$row['lastname'];
