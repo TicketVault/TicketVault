@@ -65,34 +65,36 @@
   
   
 		<div class="us_contentBox">
+        
+        	<form method="post" action="profile.php">
         	
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Username： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="username" type="text" value="<?php echo $user['name']; ?>" class="formBorder" readonly/>
+                  <input name="username" type="text" value="<?php echo $user['username']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
 				
 				 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Email： </td>
                   <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="email" type="text" value="" placeholder=""/ readonly>
+                  <input name="email" type="text" value="<?php echo $user['email']; ?>" placeholder=""/ readonly>
                   </td>
                 </tr>
                 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">First Name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="first name" type="text" value=" " class="formBorder" readonly/>
+                  <input name="first name" type="text" value="<?php echo $user['firstname']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Last name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="last name" type="text" value=" " class="formBorder" readonly/>
+                  <input name="last name" type="text" value="<?php echo $user['lastname']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
               
@@ -102,7 +104,7 @@
                   <td width="72%" align="left" bgcolor="#FFFFFF">
                   <div class="row uniform">
                   <div class="6u">
-				  	<input name="birthday" type="text" value=" " class="formBorder" readonly/>
+				  	<input name="birthday" type="text" value="<?php echo $user['birthDay']; ?>" class="formBorder" readonly/>
                   </div>
                   </div>
                   </td>
@@ -110,14 +112,14 @@
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Phone number： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="phone" type="text" value= "" class="formBorder" readonly/>
+                  <input name="phone" type="text" value="<?php echo $user['phone']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Mailing address： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="address" type="text" value = " " class="formBorder" readonly/>
+                  <input name="address" type="text" value="<?php echo $user['address']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>                <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Reserved Ticktets: </td>

@@ -10,7 +10,13 @@
 	$SQLString = "SELECT * FROM account WHERE Username='$user'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysql_fetch_assoc($sql);
+	while($row = mysqli_fetch_array($result)) {
 		$user['username']=$row['username'];
-		echo $row['username'];
-	
+		$user['firstname']=$row['username'];
+		$user['lastname']=$row['lastname'];
+		$user['email']=$row['email'];
+		$user['birthDay']=$row['birthDay'];
+		$user['address']=$row['address'];
+		$user['phone']=$row['phone'];
+	}
 ?>
