@@ -36,7 +36,7 @@
 		<!-- Header -->
 			<header id="header">
 				<h1><a href="index.html">TicketVault</a></h1>
-
+<<<<<<< HEAD
 				<nav id="nav">
 					<ul>
 						<li><a href="index.php">Home</a></li>
@@ -46,8 +46,33 @@
 						<li><a href="login.php" class="button">Login</a></li>
 					</ul>
 				</nav>
+=======
+				<?php
+					session_start();
+					if(isset($_SESSION['loginuser'])){
+						echo "<nav id="."nav".">";
+						echo "<ul>";
+						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
+						echo "<li><a href=".""." >Manage Event</a></li>";
+						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
+						echo "<li><a href="."profile.php"." >Profile</a></li>";
+						echo "<li><a href="."php/Logout.php"." class="."button".">logout</a></li>";
+						echo "</ul>";
+						echo "</nav>";
 
-
+					}else{
+						echo "<nav id="."nav".">";
+						echo "<ul>";
+						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
+						echo "<li><a href=".""." >Manage Event</a></li>";
+						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
+						echo "<li><a href="."signup.php"." class="."button".">Sign Up</a></li>";
+						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
+						echo "</ul>";
+						echo "</nav>";
+					}
+				?>
+>>>>>>> ec546b17d8bb8aec08ef0465c154775118d5cdf5
 			</header>
 
 		<!-- Main -->
