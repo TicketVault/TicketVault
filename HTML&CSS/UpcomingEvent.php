@@ -85,7 +85,7 @@
 										<?php
 											$dbhandle=mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
 											mysqli_query($dbhandle,"USE sql353761");
-											$result = mysqli_query($dbhandle, "SELECT * FROM event");
+											$result = mysqli_query($dbhandle, "SELECT * FROM event ORDER BY Eventname");
 											while($row=mysqli_fetch_array($result)){
 												echo '<tr>';
 												echo '<td>';
@@ -97,7 +97,9 @@
 												echo '<td>';
 												echo $row['Detail'];
 												echo '</td>';
+												echo '<td>';
 												echo $row['Price'];
+												echo '</td>';
 												echo '</tr>';
 											}
 										?>									
