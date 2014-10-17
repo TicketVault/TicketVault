@@ -39,10 +39,10 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.php">Home</a></li>
-						<li><a href="" >Manage Event</a></li>
-						<li><a href="ManaTickets1.html" >Upcoming Event</a></li>
+						<li><a href="eventmanage.php" >Manage Event</a></li>
+						<li><a href="UpcomingEvent.php" >Upcoming Event</a></li>
 						<li><a href="signup.php" class="button">Sign Up</a></li>
-						<li><a href="login.php" >Login</a></li>
+						<li><a href="login.php" class="button">Login</a></li>
 					</ul>
 				</nav>
 			</header>

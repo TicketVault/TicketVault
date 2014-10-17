@@ -10,7 +10,7 @@
 
 <html>
 	<head>
-		<title>TicketVault</title>
+		<title>EventManage-TicketVault</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -53,7 +53,7 @@
 						echo "<nav id="."nav".">";
 						echo "<ul>";
 						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
-						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";
+						echo "<li><a href=".""." >Manage Event</a></li>";
 						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
 						echo "<li><a href="."signup.php"." class="."button".">Sign Up</a></li>";
 						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
@@ -75,25 +75,7 @@
 				</nav>
 			</header>
 			-->
-			
-			
-
-			
-		<!-- banner -->
-			<section id="banner">
-				
-				<p>Search for Event or Organazation</p>				
-				<form>
-					<div class="row uniform half collapse-at-2">
-						<div class="6u">
-							<input type="text"  placeholder="Event Name" />
-						</div>
-						<div class="3u">
-							<input type="submit" value="Search" class="fit" />
-						</div>
-					</div>
-				</form>
-			</section>
+		
 			
 		<!-- Footer -->
 			<footer id="footer">

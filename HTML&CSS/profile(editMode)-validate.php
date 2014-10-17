@@ -1,13 +1,15 @@
  <?php
--
-+	
-+	/*Author: Chengkang Xu*/
-+	/*Handle interconnection between server and profile(editMode) page*/
-+	
+	
+/*Author: Chengkang Xu*/
+/*Handle interconnection between server and profile(editMode) page*/
+	
  	$dbhandle = mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
  	mysqli_query($dbhandle,"USE sql353761");
  	
  	$username = $_POST['username'];
+ 	
+ 	
+ 	
  
  	if (((!empty($_POST['original_password'])) || (!empty($_POST['new_password'])) || (!empty($_POST['confirm_password']))) && 
  	(!((!empty($_POST['original_password'])) && (!empty($_POST['new_password'])) && (!empty($_POST['confirm_password']))))) {
@@ -25,18 +27,26 @@
  	
  		if (!empty($_POST['email'])) {
  			
- 			update($dbhandle,"Email", $_POST['email'], $username);
+ 			
+ 			$SQLupdate = "UPDATE account SET Email = '".$_POST['email']."' WHERE Username = '$username'" ;
+ 
+ 			$result_update = mysqli_query($dbhandle, $SQLupdate);
  			
  		}
  		
  		if (!empty($_POST['firstname'])) {
  		
- 			update($dbhandle, "Firstname", $_POST['firstname'], $username);
+ 			$SQLupdate = "UPDATE account SET Firstname = '".$_POST['firstname']."' WHERE Username = '$username'" ;
+ 
+ 			$result_update = mysqli_query($dbhandle, $SQLupdate);
+ 			
  		}
  		
  		if (!empty($_POST['lastname'])) {
  		
- 			update($dbhandle, "Lastname", $_POST['lastname'], $username);
+ 			$SQLupdate = "UPDATE account SET Lastname = '".$_POST['lastname']."' WHERE Username = '$username'" ;
+ 
+ 			$result_update = mysqli_query($dbhandle, $SQLupdate);
  
  		}
  		
@@ -46,8 +56,11 @@
  		
  		if ((!empty($_POST['birthdayMonth'])) && (!empty($_POST['birthdayDay'])) && (!empty($_POST['birthdayYear']))) {
  			
-+			$birthday = $_POST['birthdayMonth'] . "/" . $_POST['birthdayDay'] . "/" . $_POST['birthdayYear'];
-+			update($dbhandle, "Birthday", $birthday, $username);
+			$birthday = $_POST['birthdayMonth'] . "/" . $_POST['birthdayDay'] . "/" . $_POST['birthdayYear'];
+
+			$SQLupdate = "UPDATE account SET Birthday = '$birthday' WHERE Username = '$username'" ;
+ 
+ 			$result_update = mysqli_query($dbhandle, $SQLupdate);		
  		}
  		
  		
@@ -55,14 +68,18 @@
  		
  		if (!empty($_POST['phone'])) {
  		
- 			update($dbhandle, "Phone", $_POST['phone'], $username);
+ 			$SQLupdate = "UPDATE account SET Phone = '".$_POST['phone']."' WHERE Username = '$username'" ;
+ 
+ 			$result_update = mysqli_query($dbhandle, $SQLupdate);
  		}
  		
  		/*address*/
  		
  		if (!empty($_POST['address'])) {
  		
- 			update($dbhandle, "Address", $_POST['address'], $username);
+ 			$SQLupdate = "UPDATE account SET Address = '".$_POST['address']."' WHERE Username = '$username'" ;
+ 
+ 			$result_update = mysqli_query($dbhandle, $SQLupdate);
  			
  		}
  		
@@ -92,7 +109,9 @@
  			}
  			
  			else {
- 				update ($dbhandle, "Password", $new_password, $username);
+ 				$SQLupdate = "UPDATE account SET Password = '$new_password' WHERE Username = '$username'" ;
+ 
+ 				$result_update = mysqli_query($dbhandle, $SQLupdate);
  			}
  		}
  	}
@@ -100,19 +119,6 @@
  	header("Location: success.php");
  	die();
  	
- 	/*query database and update data*/
- 	
- 	function update ($db, $itemToBeUpdated, $updated_data, $username) {
- 		
- 		$SQLupdate = "UPDATE account SET $itemToBeUpdated = '$updated_data' WHERE Username = $username" ;
- 
- 	   $result_update = mysqli_query($db, $SQLupdate);
- 	   
- 	   if(! $result_update )
- 	   {
- 		   die('Could not update data: ' . mysql_error());
- 		}
- 	}
  	
  	/*print error*/
  	
