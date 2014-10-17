@@ -80,7 +80,6 @@
 
 	$SQLString = "SELECT * FROM account WHERE Username='$username'";
 	$result = mysqli_query($dbhandle, $SQLString);
-
 	$row = mysqli_fetch_assoc($result);
 		$username['username']=$row['Username'];
 		$username['firstname']=$row['Firstname'];

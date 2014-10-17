@@ -88,7 +88,7 @@
   
 		<div class="us_contentBox">
 		
-		<form method="post" action="php/profile(editMode).php">
+		<form method="post" action="profile(editMode)Script.php">
 
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
