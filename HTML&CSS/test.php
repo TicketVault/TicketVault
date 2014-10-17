@@ -74,7 +74,8 @@
 	$SQLString = "SELECT * FROM account WHERE Username='$username'";
 	$result = mysqli_query($dbhandle, $SQLString);
 
-	while($row = mysqli_fetch_assoc($result)) {
+	$row = mysqli_fetch_assoc($result);
+	
 		$username['username']=$row['username'];
 		$username['firstname']=$row['username'];
 		$username['lastname']=$row['lastname'];
@@ -82,7 +83,6 @@
 		$username['birthDay']=$row['birthDay'];
 		$username['address']=$row['address'];
 		$username['phone']=$row['phone'];
-	}
 	
 	function printErr ($_err) {
 
