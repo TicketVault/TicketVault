@@ -56,6 +56,27 @@
 					<div class="12u">
 						<section class="box">
 							<h3>User Profile</h3>   
+<?php
+	
+	session_start();
+	$username = $_SESSION['loginuser'];
+	
+	$dbhandle = mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
+	//choose the database you want to use or you can ignore this line and do DATABASE.table inside the mysqli_query();
+	mysqli_query($dbhandle,"USE sql353761");
+
+	$SQLString = "SELECT * FROM account WHERE Username='$username'";
+	$result = mysqli_query($dbhandle, $SQLString);
+
+	$row = mysqli_fetch_assoc($result);
+		$username['username']=$row['Username'];
+		$username['firstname']=$row['Firstname'];
+		$username['lastname']=$row['Lastname'];
+		$username['email']=$row['Email'];
+		$username['birthDay']=$row['BirthDay'];
+		$username['address']=$row['Address'];
+		$username['phone']=$row['Phone'];
+?>
   <div id="right">
   
 		<div class="us_contentBox">
@@ -67,7 +88,7 @@
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Username： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="username" type="text" value="1" class="formBorder" readonly/>
+                  <input name="username" type="text" value=<?php echo $row['Username']; ?> class="formBorder" readonly/>
                   </td>
                 </tr>
 				
