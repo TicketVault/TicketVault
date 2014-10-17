@@ -75,6 +75,7 @@
 											<tr>
 												<th>Events Name</th>
 												<th>Organization name</th>
+                                                <th>Events Description</th>
 												<th>Price</th>
 											</tr>
 										</thead>
@@ -93,7 +94,10 @@
 												echo '<td>';
 												echo $row['OrganizationName'];
 												echo '</td>';
-												echo '<td>19.99</td>';
+												echo '<td>';
+												echo $row['Detail'];
+												echo '</td>';
+												echo $row['Price'];
 												echo '</tr>';
 											}
 										?>									
