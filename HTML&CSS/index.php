@@ -40,9 +40,9 @@
 					if(isset($_SESSION['loginuser'])){
 						echo "<nav id="."nav".">";
 						echo "<ul>";
-						echo "<li><a href="."index.html"." >Home</a></li>";
-						echo "<li><a href="."index.html"." >Manage Event</a></li>";
-						echo "<li><a href="."index.html"." >Upcoming Event</a></li>";
+						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
+						echo "<li><a href=".""." >Manage Event</a></li>";
+						echo "<li><a href=".""." >Upcoming Event</a></li>";
 						echo "<li><a href="."profile.html"." >Profile</a></li>";
 						echo "<li><a href=".""." class="."button".">logout</a></li>";
 						echo "</ul>";
@@ -51,9 +51,9 @@
 					}else{
 						echo "<nav id="."nav".">";
 						echo "<ul>";
-						echo "<li><a href="."index.html"." >Home</a></li>";
-						echo "<li><a href="."index.html"." >Manage Event</a></li>";
-						echo "<li><a href="."index.html"." >Upcoming Event</a></li>";
+						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
+						echo "<li><a href=".""." >Manage Event</a></li>";
+						echo "<li><a href=".""." >Upcoming Event</a></li>";
 						echo "<li><a href="."signup.html"." class="."button".">Sign Up</a></li>";
 						echo "<li><a href="."login.html"." class="."button".">login</a></li>";
 						echo "</ul>";
