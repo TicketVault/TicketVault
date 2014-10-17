@@ -36,15 +36,6 @@
 		<!-- Header -->
 			<header id="header">
 				<h1><a href="index.html">TicketVault</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.php">Home</a></li>
-						<li><a href="eventmanage.php" >Manage Event</a></li>
-						<li><a href="UpcomingEvent.php" >Upcoming Event</a></li>
-						<li><a href="signup.php" class="button">Sign Up</a></li>
-						<li><a href="login.php" class="button">Login</a></li>
-					</ul>
-				</nav>
 				<?php
 					session_start();
 					if(isset($_SESSION['loginuser'])){
