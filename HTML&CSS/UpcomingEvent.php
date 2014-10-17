@@ -79,7 +79,6 @@
 											</tr>
 										</thead>
 									<html><head><title>MySQL Table Viewer</title></head><body>
-=
 									</body></html>
 									<tbody>
 										<?php
