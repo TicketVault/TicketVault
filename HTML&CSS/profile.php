@@ -50,7 +50,7 @@
 						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
 						echo "<li><a href=".""." >Manage Event</a></li>";
 						echo "<li><a href=".""." >Upcoming Event</a></li>";
-						echo "<li><a href="."signup.html"." class="."button".">Sign Up</a></li>";
+						echo "<li><a href="."signup.php"." class="."button".">Sign Up</a></li>";
 						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
 						echo "</ul>";
 						echo "</nav>";
@@ -85,7 +85,7 @@
 		$username['firstname']=$row['Firstname'];
 		$username['lastname']=$row['Lastname'];
 		$username['email']=$row['Email'];
-		$username['birthDay']=$row['BirthDay'];
+		$username['birthDay']=$row['Birthday'];
 		$username['address']=$row['Address'];
 		$username['phone']=$row['Phone'];
 ?>
@@ -131,7 +131,7 @@
                   <td width="72%" align="left" bgcolor="#FFFFFF">
                   <div class="row uniform">
                   <div class="6u">
-				  	<input name="birthday" type="text" value="<?php echo $row['BirthDay']; ?>" class="formBorder" readonly/>
+				  	<input name="birthday" type="text" value="<?php echo $row['Birthday']; ?>" class="formBorder" readonly/>
                   </div>
                   </div>
                   </td>

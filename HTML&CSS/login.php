@@ -58,8 +58,8 @@
 						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
 						echo "<li><a href=".""." >Manage Event</a></li>";
 						echo "<li><a href=".""." >Upcoming Event</a></li>";
-						echo "<li><a href="."signup.html"." class="."button".">Sign Up</a></li>";
-						echo "<li><a href="."login.html"." class="."button".">login</a></li>";
+						echo "<li><a href="."signup.php"." class="."button".">Sign Up</a></li>";
+						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
 						echo "</ul>";
 						echo "</nav>";
 					}
