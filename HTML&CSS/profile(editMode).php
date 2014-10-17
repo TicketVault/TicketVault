@@ -28,25 +28,32 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1><a href="index.html">TicketVault</h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="http://ticketvault.cu.cc">Home</a></li>
-						<li><a href="">Manage Events</a></li>
-						<li><a href="">Upcoming Events</a></li>
-						<li><a href="signup.html" class="button">Sign up</a></li>
-								<li>
-							<a href="" class="icon fa-angle-down">Login</a>
-							<ul>
-								<form>
-									Username: <input type="text" name="firstname"><br>
-									Password: <input type="password" name="pwd">
-								</form>
+				<h1><a href="http://ticketvault.cu.cc">TicketVault</h1>
+				<?php
+					session_start();
+					if(isset($_SESSION['loginuser'])){
+						echo "<nav id="."nav".">";
+						echo "<ul>";
+						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
+						echo "<li><a href=".""." >Manage Event</a></li>";
+						echo "<li><a href=".""." >Upcoming Event</a></li>";
+						echo "<li><a href="."profile.php"." >Profile</a></li>";
+						echo "<li><a href="."php/Logout.php"." class="."button".">logout</a></li>";
+						echo "</ul>";
+						echo "</nav>";
 
-							</ul>
-						</li>
-					</ul>
-				</nav>
+					}else{
+						echo "<nav id="."nav".">";
+						echo "<ul>";
+						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
+						echo "<li><a href=".""." >Manage Event</a></li>";
+						echo "<li><a href=".""." >Upcoming Event</a></li>";
+						echo "<li><a href="."signup.html"." class="."button".">Sign Up</a></li>";
+						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
+						echo "</ul>";
+						echo "</nav>";
+					}
+				?>
 			</header>
 
 		<!-- Main -->

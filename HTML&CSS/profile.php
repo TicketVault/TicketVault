@@ -30,7 +30,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1><a href="index.html">TicketVault</h1>
+				<h1><a href="http://ticketvault.cu.cc">TicketVault</h1>
 				<?php
 					session_start();
 					if(isset($_SESSION['loginuser'])){
