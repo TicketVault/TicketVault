@@ -83,7 +83,10 @@
 		$username['birthDay']=$row['birthDay'];
 		$username['address']=$row['address'];
 		$username['phone']=$row['phone'];
-	
+		echo "debug";
+		echo $username['username'];
+		echo $row['username'];
+		
 	function printErr ($_err) {
 
 		
