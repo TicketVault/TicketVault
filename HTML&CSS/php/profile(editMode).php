@@ -93,8 +93,7 @@
 			}
 		}
 	}
-	
-	header("Location: ../success.html");
+		header("Location: ../success.html");
 	die();
 	
 	/*query database and update data*/
