@@ -99,11 +99,11 @@
  				printErr ('Passwords do not match');
  			}
  			
- 			$result = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username=$username");
+ 			$result = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username= '$username'");
  			
- 			$result_password = mysqli_fetch_array($result);
+ 			$row = mysqli_fetch_assoc($result);
  			
- 			if ($original_password != $result_password['Password']) {
+ 			if ($original_password != $row['Password']) {
  		
  				printErr ('Password is incorrect');
  			}

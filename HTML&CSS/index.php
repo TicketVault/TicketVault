@@ -42,11 +42,7 @@
 						echo "<nav id="."nav".">";
 						echo "<ul>";
 						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
-<<<<<<< HEAD
-						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";
-=======
-						echo "<li><a href=".""." >Manage Event</a></li>";
->>>>>>> ec546b17d8bb8aec08ef0465c154775118d5cdf5
+						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";	
 						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
 						echo "<li><a href="."profile.php"." >Profile</a></li>";
 						echo "<li><a href="."php/Logout.php"." class="."button".">logout</a></li>";
@@ -57,11 +53,8 @@
 						echo "<nav id="."nav".">";
 						echo "<ul>";
 						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
-<<<<<<< HEAD
 						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";
-=======
 						echo "<li><a href=".""." >Manage Event</a></li>";
->>>>>>> ec546b17d8bb8aec08ef0465c154775118d5cdf5
 						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
 						echo "<li><a href="."signup.php"." class="."button".">Sign Up</a></li>";
 						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
