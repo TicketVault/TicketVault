@@ -26,35 +26,10 @@
 	</head>
 	<body>
 
-		<!-- Header -->
-			<header id="header">
-				<h1><a href="index.html">TicketVault</h1>
-				<?php
-					session_start();
-					if(isset($_SESSION['loginuser'])){
-						echo "<nav id="."nav".">";
-						echo "<ul>";
-						echo "<li><a href="."index.php"." >Home</a></li>";
-						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";
-						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
-						echo "<li><a href="."profile.php"." >Profile</a></li>";
-						echo "<li><a href="."php/Logout.php"." class="."button".">logout</a></li>";
-						echo "</ul>";
-						echo "</nav>";
-
-					}else{
-						echo "<nav id="."nav".">";
-						echo "<ul>";
-						echo "<li><a href="."index.php"." >Home</a></li>";
-						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";
-						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
-						echo "<li><a href="."signup.php"." class="."button".">Sign Up</a></li>";
-						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
-						echo "</ul>";
-						echo "</nav>";
-					}
-				?>
-			</header>
+	<?php
+		include('php/Base.php');
+		sub_banner();
+	?>
 
 		<!-- Main -->
 			<section id="main" class="container">

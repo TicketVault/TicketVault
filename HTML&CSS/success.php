@@ -26,12 +26,10 @@
 	</head>
 	<body>
 	
-		<!-- Header -->
-			<header id="header">
-				<h1><a href="http://ticketvault.cu.cc">TicketVault</a></h1>
-				
-			</header>
-
+	<?php
+		include('php/Base.php');
+		sub_banner();
+	?>
 		<!-- Main -->
 			<section id="main" class="container small">
 				<header>
@@ -43,16 +41,9 @@
 				
 			</section>
 			
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					
-					<li><a href="https://github.com/TicketVault/TicketVault" class="icon fa-github"><span class="label">Github</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; CS307 Fall2014 Team8.</li>
-				</ul>
-			</footer>
-
+	<!-- Footer -->
+	<?php
+		footer();
+	?>
 	</body>
 </html>

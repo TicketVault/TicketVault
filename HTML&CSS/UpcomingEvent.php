@@ -26,35 +26,10 @@
 	</head>
 	<body>
 
-		<!-- Header -->
-			<header id="header">
-				<h1><a href="http://ticketvault.cu.cc">TicketValut</h1>
-				<?php
-					session_start();
-					if(isset($_SESSION['loginuser'])){
-						echo "<nav id="."nav".">";
-						echo "<ul>";
-						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
-						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";	
-						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
-						echo "<li><a href="."profile.php"." >Profile</a></li>";
-						echo "<li><a href="."php/Logout.php"." class="."button".">logout</a></li>";
-						echo "</ul>";
-						echo "</nav>";
-
-					}else{
-						echo "<nav id="."nav".">";
-						echo "<ul>";
-						echo "<li><a href="."http://ticketvault.cu.cc"." >Home</a></li>";
-						echo "<li><a href="."eventmanage.php"." >Manage Event</a></li>";	
-						echo "<li><a href="."UpcomingEvent.php"." >Upcoming Event</a></li>";
-						echo "<li><a href="."signup.php"." class="."button".">Sign Up</a></li>";
-						echo "<li><a href="."login.php"." class="."button".">login</a></li>";
-						echo "</ul>";
-						echo "</nav>";
-					}
-				?>
-			</header>
+	<?php
+		include('php/Base.php');
+		sub_banner();
+	?>
 
 		<!-- Main -->
 			<section id="main" class="container">
@@ -121,39 +96,8 @@
 				
 				
 			</section>
-			<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://github.com/TicketVault/TicketVault" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a href="https://www.cs.purdue.edu/homes/bxd/307/" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-
-				<!--
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-					<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-					-->
-				</ul>
-				<ul class="copyright">
-					<li>&copy; CS307 Fall2014 Team8</li>
-				</ul>
-			</footer>
-
-	<!--
-<ul class="dropotron level-0" style="-webkit-user-select: none; display: none; position: absolute; z-index: 1000;">
-								<li style="white-space: nowrap;"><a href="file://localhost/Users/sunkai/Downloads/TicketVault-master/Tamplate/generic.html" style="display: block;">Generic</a></li>
-								<li style="white-space: nowrap;"><a href="file://localhost/Users/sunkai/Downloads/TicketVault-master/Tamplate/contact.html" style="display: block;">Contact</a></li>
-								<li style="white-space: nowrap;"><a href="file://localhost/Users/sunkai/Downloads/TicketVault-master/Tamplate/elements.html" style="display: block;">Elements</a></li>
-								<li class="opener" style="-webkit-user-select: none; cursor: pointer; white-space: nowrap;">
-									<a href="" style="display: block;">Submenu</a>
-									<ul style="-webkit-user-select: none; display: none; position: absolute; z-index: 1001;" class="dropotron level-1">
-										<li style="white-space: nowrap;"><a href="./Tickets_files/Tickets.html" style="display: block;">Option One</a></li>
-										<li style="white-space: nowrap;"><a href="./Tickets_files/Tickets.html" style="display: block;">Option Two</a></li>
-										<li style="white-space: nowrap;"><a href="./Tickets_files/Tickets.html" style="display: block;">Option Three</a></li>
-										<li style="white-space: nowrap;"><a href="./Tickets_files/Tickets.html" style="display: block;">Option Four</a></li>
-									</ul>
-								</li>
-							</ul></div><div id="skel-layers-hiddenWrapper" style="height: 100%;"></div><div id="skel-layers-visibleWrapper" style="position: relative;"></div></body>-->
-							</html>
+		<!-- Footer -->
+		<?php
+			footer();
+		?>
+	</html>

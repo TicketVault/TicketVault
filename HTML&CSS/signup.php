@@ -33,19 +33,10 @@
 	</head>
 	<body>
 
-		<!-- Header -->
-			<header id="header">
-				<h1><a href="http://ticketvault.cu.cc">TicketVault</h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.php">Home</a></li>
-						<li><a href="eventmanage.php" >Manage Event</a></li>
-						<li><a href="UpcomingEvent.php" >Upcoming Event</a></li>
-						<li><a href="signup.php" class="button">Sign Up</a></li>
-						<li><a href="login.php" class="button">Login</a></li>
-					</ul>
-				</nav>
-			</header>
+	<?php
+		include('php/Base.php');
+		sub_banner();
+	?>
 
 		<!-- Main -->
 			<section id="main" class="container small">
@@ -90,19 +81,11 @@
 					</form>
 					<h6 class = "actions align-center"> Tips: please enter only alphabetic and numeric letters for username and password. </h6>
 				</div>
-			</section>
-			
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					
-					<li><a href="https://github.com/TicketVault/TicketVault" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a href="https://www.cs.purdue.edu/homes/bxd/307/" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; CS307 Fall2014 Team8.</li>
-				</ul>
-			</footer>
+			</section>	
+	<!-- Footer -->
+	<?php
+		footer();
+	?>
 
 	</body>
 </html>
