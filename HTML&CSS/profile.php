@@ -50,21 +50,25 @@
 	session_start();
 	$username = $_SESSION['loginuser'];
 	
-	$dbhandle = mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
-	//choose the database you want to use or you can ignore this line and do DATABASE.table inside the mysqli_query();
-	mysqli_query($dbhandle,"USE sql353761");
-
+	$dbhandle = mysqli_connect("mysql.hostinger.co.uk","u907917272_cs307","CS307TEAM8","u907917272_table");
+	if (mysqli_connect_errno())
+	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+	mysqli_query($dbhandle,"USE u907917272_cs307");	
+	
+	
 	$SQLString = "SELECT * FROM account WHERE Username='$username'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
-		$username['username']=$row['Username'];
-		$username['firstname']=$row['Firstname'];
-		$username['lastname']=$row['Lastname'];
-		$username['email']=$row['Email'];
-		$username['birthDay']=$row['Birthday'];
-		$username['address']=$row['Address'];
-		$username['phone']=$row['Phone'];
-?>
+	$username['username']=$row['Username'];
+	$username['firstname']=$row['Firstname'];
+	$username['lastname']=$row['Lastname'];
+	$username['email']=$row['Email'];
+	$username['birthDay']=$row['Birthday'];
+	$username['address']=$row['Address'];
+	$username['phone']=$row['Phone'];
+?> 
 
   <div id="right">
 		<div class="us_contentBox">

@@ -58,8 +58,13 @@
 									</body></html>
 									<tbody>
 										<?php
-											$dbhandle=mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
-											mysqli_query($dbhandle,"USE sql353761");
+											$username = $_SESSION['loginuser'];
+											$dbhandle = mysqli_connect("mysql.hostinger.co.uk","u907917272_cs307","CS307TEAM8","u907917272_table");
+											if (mysqli_connect_errno())
+											{
+												echo "Failed to connect to MySQL: " . mysqli_connect_error();
+											}
+											mysqli_query($dbhandle,"USE u907917272_cs307");											
 											$result = mysqli_query($dbhandle, "SELECT * FROM event ORDER BY Eventname");
 											while($row=mysqli_fetch_array($result)){
 												echo '<tr>';

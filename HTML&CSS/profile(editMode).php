@@ -43,9 +43,14 @@
 	session_start();
 	$username = $_SESSION['loginuser'];
 	
-	$dbhandle = mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
-	mysqli_query($dbhandle,"USE sql353761");
-
+	$dbhandle = mysqli_connect("mysql.hostinger.co.uk","u907917272_cs307","CS307TEAM8","u907917272_table");
+	if (mysqli_connect_errno())
+	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+	mysqli_query($dbhandle,"USE u907917272_cs307");	
+	
+	
 	$SQLString = "SELECT * FROM account WHERE Username='$username'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);

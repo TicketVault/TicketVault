@@ -3,14 +3,16 @@
 /*Author: Chengkang Xu*/
 /*Handle interconnection between server and profile(editMode) page*/
 	
- 	$dbhandle = mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
- 	mysqli_query($dbhandle,"USE sql353761");
- 	
- 	$username = $_POST['username'];
- 	
- 	
- 	
- 
+ 	$dbhandle = mysqli_connect("mysql.hostinger.co.uk","u907917272_cs307","CS307TEAM8","u907917272_table");
+	if (mysqli_connect_errno())
+	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+	mysqli_query($dbhandle,"USE u907917272_cs307");
+	
+	
+	
+ 	$username = $_POST['username']; 	
  	if (((!empty($_POST['original_password'])) || (!empty($_POST['new_password'])) || (!empty($_POST['confirm_password']))) && 
  	(!((!empty($_POST['original_password'])) && (!empty($_POST['new_password'])) && (!empty($_POST['confirm_password']))))) {
  		

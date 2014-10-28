@@ -3,8 +3,12 @@
 	/*Author: Chengkang Xu*/
 	/*Handle interconnection between server and sign up page*/
 
-	$dbhandle = mysqli_connect("sql3.freemysqlhosting.net","sql353761","bR7%eL9*");
-	mysqli_query($dbhandle,"USE sql353761");
+	$dbhandle = mysqli_connect("mysql.hostinger.co.uk","u907917272_cs307","CS307TEAM8","u907917272_table");
+	if (mysqli_connect_errno())
+	{
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
+	mysqli_query($dbhandle,"USE u907917272_cs307");
 
 	if ((!empty($_POST['username'])) && (!empty($_POST['password'])) && (!empty($_POST['password_validate'])) && (!empty($_POST['email']))) {
 		$username=$_POST['username'];
