@@ -26,9 +26,10 @@
 	}
 	
 	else {
-
+		
+		$hash=password_hash ($password, PASSWORD_DEFAULT);
 		$SQLString = "INSERT INTO account (Username,Email,Password)
-		VALUES( '$username','$email', '$password')";
+		VALUES( '$username','$email', '$hash')";
 		mysqli_query($dbhandle, $SQLString);
 			
 		session_start();
