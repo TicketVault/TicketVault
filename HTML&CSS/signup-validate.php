@@ -31,7 +31,7 @@
 		$SQLString = "INSERT INTO account (Username,Email,Password)
 		VALUES( '$username','$email', '$hash')";
 		mysqli_query($dbhandle, $SQLString);
-			
+		signup_email($email);
 		session_start();
 		$_SESSION['loginuser']=$username;
 		

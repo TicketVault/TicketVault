@@ -89,7 +89,6 @@
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 		// Additional headers
-	$headers .= $email . "\r\n";
 	$headers .= 'From: Ticket Vault <support@ticketvault.cu.cc>' . "\r\n";
 	$headers .= 'Cc: '. "\r\n";
 	$headers .= 'Bcc: ' . "\r\n";
