@@ -7,47 +7,41 @@
 	$dbhandle = database_connect();
 	mysqli_query($dbhandle,"USE u907917272_cs307");
 
-	if ((!empty($_POST['username'])) && (!empty($_POST['password'])) && (!empty($_POST['password_validate'])) && (!empty($_POST['email']))) {
-		$username=$_POST['username'];
-		$email=$_POST['email'];
-		$password=$_POST['password'];
-		$password_validate=$_POST['password_validate'];
+	$username=$_POST['username'];
+	$email=$_POST['email'];
+	$password=$_POST['password'];
+	$password_validate=$_POST['password_validate'];
 		
+	$result_username = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username=$username");
+	$result_email = mysqli_query($dbhandle, "SELECT * FROM account WHERE Email=$email");
 		
-
-		$result_username = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username=$username");
-		$result_email = mysqli_query($dbhandle, "SELECT * FROM account WHERE Email=$email");
+	if (mysqli_num_rows($result_username) > 0) {
 		
-		if (mysqli_num_rows($result_username) > 0) {
+		hasDuplicateUsername ($username, $email);
+	}
 		
-			hasDuplicateUsername ();
-		}
+	else if (mysqli_num_rows($result_email) > 0) {
 		
-		else if (mysqli_num_rows($result_email) > 0) {
-		
-			hasDuplicateEmail ();	
-		}
+		hasDuplicateEmail ($username, $email);	
+	}
 	
-		else {
+	else {
 
-			$SQLString = "INSERT INTO account (Username,Email,Password)
-			VALUES( '$username','$email', '$password')";
-			mysqli_query($dbhandle, $SQLString);
+		$SQLString = "INSERT INTO account (Username,Email,Password)
+		VALUES( '$username','$email', '$password')";
+		mysqli_query($dbhandle, $SQLString);
 			
-			session_start();
-			$_SESSION['loginuser']=$username;
+		session_start();
+		$_SESSION['loginuser']=$username;
 		
-			header("Location: success.php");
-			die();
-	
-		}
-		
+		header("Location: success.php");
+		die();
 	}
 	
 	
 	/*print error*/
 	
-	function printErr ($_err) {
+	function printErr ($_err, $username, $email) {
 
 		
 		echo '<html>
@@ -56,21 +50,27 @@
 				</head>
 				<body>';
     	echo "$_err";
+    	
+    	session_start();
+    	
+		$_SESSION['UN']=$username;
+		$_SESSION['EM']=$email;
+		
 		die();
 	
 	}
 	
 	/*display duplicate username error*/
 	
-	function hasDuplicateUsername () {
+	function hasDuplicateUsername ($username, $email) {
 	
-		printErr('Username is duplicated');
+		printErr('Username is duplicated', $username, $email);
 	}
 	
 	/*display duplicate username error*/
 	
-	function hasDuplicateEmail () {
+	function hasDuplicateEmail ($username, $email) {
 	
-		printErr('Email is duplicated');
+		printErr('Email is duplicated', $username, $email);
 	}	
 ?>

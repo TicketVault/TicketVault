@@ -37,6 +37,19 @@
 		include('php/Base.php');
 		sub_banner();
 	?>
+	
+	<?php
+		session_start();
+		if (isset($_SESSION['UN'])) {
+			
+			$UN=$_SESSION['UN'];
+		}
+		
+		if (isset($_SESSION['EM'])) {
+			
+			$EM=$_SESSION['EM'];
+		}
+	?>
 
 		<!-- Main -->
 			<section id="main" class="container small">
@@ -48,12 +61,12 @@
 					<form method="post" action="signup-validate.php" onsubmit="return ValidateForm(this);">
 						<div class="row uniform half">
 							<div class="12u">
-								<input type="text" name="username" id="username" value="" placeholder="User Name" />
+								<input type="text" name="username" id="username" value="<?php echo "$UN"; ?>" placeholder="User Name" />
 							</div>
 						</div>
 						<div class="row uniform half">
 							<div class="12u">
-								<input type="text" name="email" id="email" value="" placeholder="Email" />
+								<input type="text" name="email" id="email" value="<?php echo "$EM"; ?>" placeholder="Email" />
 								<h5>  </h5>
 							</div>
 						</div>
