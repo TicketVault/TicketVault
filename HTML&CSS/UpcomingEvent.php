@@ -65,7 +65,7 @@
 											while($row=mysqli_fetch_array($result)){
 												echo '<tr>';
 												echo '<td>';
-												echo '<a href = "eventdetail.php">'.$row['Eventname'].'</a><br>';
+												echo '<a href = "enentProfile.php">'.$row['Eventname'].'</a><br>';
 												echo '</td>';
 												echo '<td>';
 												echo $row['OrganizationName'];
