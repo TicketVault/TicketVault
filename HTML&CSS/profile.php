@@ -43,6 +43,8 @@
 							<h3>User Profile</h3>
                             <ul class="actions vertical small">
                             	<li> <a href="profile(editMode).php">#Edit Your Profile</a></li>
+                            	<li> <a href="userticket.php">#View your booked event</a></li>
+
                             </ul>
   
 <?php
@@ -123,12 +125,7 @@
                   <td width="80%" align="left" bgcolor="#FFFFFF">
                   <input name="address" type="text" value="<?php echo $row['Address']; ?>" class="formBorder" readonly/>
                   </td>
-                </tr>                <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Reserved Ticktets: </td>
-                  <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="tickets" type="text" value=" " class="formBorder" readonly/>
-                  </td>
-                </tr> 
+                </tr>              
 		</div>
   
 		</div>
