@@ -8,8 +8,9 @@
 
 	$username=$_POST["username"];
 	$password=$_POST["password"];
-	$hash = password_hash($passwod, PASSWORD_DEFAULT);
-	$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$hash'";
+	$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$password'";
+	//$hash = password_hash($passwod, PASSWORD_DEFAULT);
+	//$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$hash'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$count=mysqli_num_rows($result);
 	if($count==1){

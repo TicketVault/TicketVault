@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>Login - TicketVault</title>
+		<title>Lost password - TicketVault</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -45,20 +45,13 @@
 		<!-- Main -->
 			<section id="main" class="container small">
 				<header>
-					<h2>Login</h2>
-					
+					<h2>Retrieve password</h2>
 				</header>
 				<div class="box">
-					<form method="post" action="php/Login.php" onsubmit="return ValidateForm(this);">
+					<form method="post" action="php/Lostpwd_email.php" onsubmit="return ValidateForm(this);">
 						<div class="row uniform half">
 							<div class="12u">
-								<input type="text" name="username" id="username" value="" placeholder="User Name" />
-							</div>
-						</div>
-						<div class="row uniform half">
-							<div class="12u">
-								<input type="password" name="password" id="pwd" value="" placeholder="Password" />
-								<h5>  </h5>
+								<h4>Enter your username<input type="text" name="username" id="username" value="" placeholder="User Name" /></h4>
 							</div>
 						</div>
 
@@ -69,13 +62,7 @@
 								</ul>
 							</div>
 						</div>
-						
-						<div>
-							<div class="12u">
-									<h5></h5>
-									<h5 align="center"> <a href="lostpassword.php">Forget your password? Click Here</a></h5>
-							</div>
-						</div>
+		
 					</form>
 				</div>
 			</section>
