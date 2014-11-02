@@ -1,5 +1,5 @@
  <?php	
-	include('php/Base.php');
+	include('Base.php');
 	$dbhandle = database_connect();
 	mysqli_query($dbhandle,"USE u907917272_cs307");
 	$username = $_POST['username']; 
@@ -9,6 +9,10 @@
  	}else{
 		$SQLupdate = "UPDATE account SET Password = '$password' WHERE Username = '$username'" ;
 		$result_update = mysqli_query($dbhandle, $SQLupdate);
-		header("Location: change_pwd_ succeeds.html");
+		$context =  hash('md5', $username);
+		$filename = "../".$context.".php";
+		echo($filename);
+		unlink($filename);
+		header("Location: ../change_pwd_succeeds.html");
 	}
 ?>

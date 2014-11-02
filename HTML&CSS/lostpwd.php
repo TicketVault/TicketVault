@@ -4,12 +4,9 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<?php
-$username = 'huang420';
-?>
 <html>
 	<head>
-		<title>Profile - TicketVault</title>
+		<title>Reset Password - TicketVault</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -39,7 +36,7 @@ $username = 'huang420';
   
 		<div class="us_contentBox">
 				<h3>Change Password</h3>
-		<form method="post" action="changepwd.php">
+		<form method="post" action="php/changepwd.php">
      		<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
      		    <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Username： </td>
