@@ -7,7 +7,8 @@
 	if ($_POST['confirm_password'] != $_POST['new_password']) {
  				echo 'Passwords do not match';
  	}else{
-		$SQLupdate = "UPDATE account SET Password = '$password' WHERE Username = '$username'" ;
+ 		$hash_password = hash('md5',$password);
+		$SQLupdate = "UPDATE account SET Password = '$hash_password' WHERE Username = '$username'" ;
 		$result_update = mysqli_query($dbhandle, $SQLupdate);
 		$context =  hash('md5', $username);
 		$filename = "../".$context.".php";
