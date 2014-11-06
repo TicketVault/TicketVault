@@ -8,9 +8,9 @@
 
 
 
-	$hash=hash ('md5',$password);
 	$username=$_POST["username"];
-	//$password=$_POST["password"];
+	$password=$_POST["password"];
+	$hash=hash ('md5',$password);
 	$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$hash'";
 	//$hash = password_hash($passwod, PASSWORD_DEFAULT);
 	//$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$hash'";
