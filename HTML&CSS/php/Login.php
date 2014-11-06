@@ -6,9 +6,12 @@
 	mysqli_query($dbhandle,"USE u907917272_cs307");	
 	//choose the database you want to use or you can ignore this line and do DATABASE.table inside the mysqli_query();
 
+
+
+	$hash=hash ('md5',$password);
 	$username=$_POST["username"];
-	$password=$_POST["password"];
-	$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$password'";
+	//$password=$_POST["password"];
+	$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$hash'";
 	//$hash = password_hash($passwod, PASSWORD_DEFAULT);
 	//$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$hash'";
 	$result = mysqli_query($dbhandle, $SQLString);
