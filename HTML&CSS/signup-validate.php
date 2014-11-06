@@ -27,7 +27,7 @@
 	
 	else {
 		
-		$hash=password_hash ($password, PASSWORD_DEFAULT);
+		$hash=hash ('md5',$password);
 		$SQLString = "INSERT INTO account (Username,Email,Password)
 		VALUES( '$username','$email', '$hash')";
 		mysqli_query($dbhandle, $SQLString);
