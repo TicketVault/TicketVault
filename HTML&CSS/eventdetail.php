@@ -48,21 +48,15 @@
 <?php
 	
 	session_start();
-	$username = $_SESSION['loginuser'];
+	$EventID = $_SESSION['eventID'];
 	$dbhandle = database_connect();
 	mysqli_query($dbhandle,"USE u907917272_cs307");	
 	
 	
-	$SQLString = "SELECT * FROM account WHERE Username='$username'";
+	$SQLString = "SELECT * FROM event WHERE EventID='$EventID'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
-	$username['username']=$row['Username'];
-	$username['firstname']=$row['Firstname'];
-	$username['lastname']=$row['Lastname'];
-	$username['email']=$row['Email'];
-	$username['birthDay']=$row['Birthday'];
-	$username['address']=$row['Address'];
-	$username['phone']=$row['Phone'];
+
 ?> 
 
   <div id="right">
@@ -73,63 +67,52 @@
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
                 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Username： </td>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Event name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="username" type="text" value="<?php echo $row['Username']; ?>" class="formBorder" readonly/>
+                  <input name="username" type="text" value="<?php echo $row['Eventname']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
-				
-				 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Email： </td>
-                  <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="email" type="text" value="<?php echo $row['Email']; ?>" placeholder=""/ readonly>
-                  </td>
-                </tr>
-                
+			
                 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">First Name： </td>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Organization Name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="first name" type="text" value="<?php echo $row['Firstname']; ?>" class="formBorder" readonly/>
+                  <input name="first name" type="text" value="<?php echo $row['Organization name']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
-                
+                         
                 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Last name： </td>
-                  <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="last name" type="text" value="<?php echo $row['Lastname']; ?>" class="formBorder" readonly/>
-                  </td>
-                </tr>
-              
-                
-                <tr>
-                  <td width="28%" align="right" bgcolor="#FFFFFF">Birthday： </td>
+                  <td width="28%" align="right" bgcolor="#FFFFFF">Detail： </td>
                   <td width="72%" align="left" bgcolor="#FFFFFF">
                   <div class="row uniform">
                   <div class="6u">
-				  	<input name="birthday" type="text" value="<?php echo $row['Birthday']; ?>" class="formBorder" readonly/>
+				  	<input name="birthday" type="text" value="<?php echo $row['Detail']; ?>" class="formBorder" readonly/>
                   </div>
                   </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Phone number： </td>
-                  <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="phone" type="text" value="<?php echo $row['Phone']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                 
-                <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Mailing address： </td>
+                  <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Price： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="address" type="text" value="<?php echo $row['Address']; ?>" class="formBorder" readonly/>
+                  <input name="last name" type="text" value="<?php echo $row['Price']; ?>" class="formBorder" readonly/>
                   </td>
-                </tr>                <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Reserved Ticktets: </td>
+                </tr>
+                
+                 <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Location： </td>
                   <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="tickets" type="text" value=" " class="formBorder" readonly/>
+                  <input name="email" type="text" value="<?php echo $row['Location']; ?>" placeholder=""/ readonly>
                   </td>
-                </tr> 
-		</div>
+                </tr>
+                
+                  <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Remaining tickets： </td>
+                  <td width="80%" align="left" bgcolor="#FFFFFF">
+                  <input name="last name" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
+                  </td>
+                </tr>
+                
+               </div>
   
 		</div>
 
