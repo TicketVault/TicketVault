@@ -23,7 +23,17 @@
 		die();
 	}
 	else{
-		header("Location: ../loginerror.html");
-		die();
+		$SQLString = "SELECT * FROM organizationAccount WHERE Username='$username' AND Password='$hash'";
+		$result = mysqli_query($dbhandle, $SQLString);
+		$count=mysqli_num_rows($result);
+		if($count==1){
+			session_start();
+			$_SESSION['organizationuser']=$username;
+			header("Location: ../index.php");
+			die();
+		}else{		
+			header("Location: ../loginerror.html");
+			die();
+		}
 	}	
 ?>
