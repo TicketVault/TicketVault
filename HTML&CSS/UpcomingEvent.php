@@ -45,7 +45,6 @@
 								<h3>Table</h3>
 								<div class="table-wrapper">
 									<table>
-									
 										<thead>
 											<tr>
 												<th>Events Name</th>
@@ -65,7 +64,7 @@
 											while($row=mysqli_fetch_array($result)){
 												echo '<tr>';
 												echo '<td>';
-												echo '<a href = "enentProfile.php">'.$row['Eventname'].'</a><br>';
+												echo '<a href = "enentProfile.php?event_name='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
 												echo '</td>';
 												echo '<td>';
 												echo $row['OrganizationName'];

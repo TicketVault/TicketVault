@@ -46,14 +46,12 @@
                             </ul>
   
 <?php
-	
+	//echo "here";
+	//echo $_GET['event_name'];
 	session_start();
-	$username = $_SESSION['loginuser'];
 	$dbhandle = database_connect();
-	mysqli_query($dbhandle,"USE u907917272_cs307");	
-	
-	
-	$SQLString = "SELECT * FROM event";
+	$eventname = $_GET['event_name'];
+	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
 	$username['eventname']=$row['Eventname'];
