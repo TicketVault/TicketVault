@@ -72,7 +72,7 @@
 												$row_event=mysqli_fetch_array($result_event);
 												echo '<tr>';
 												echo '<td>';
-												echo '<a href = "enentProfile.php">'.$row_event['Eventname'].'</a><br>';
+												echo '<a href = "enentProfile.php?event_name='.$row_event['Eventname'].'">'.$row_event['Eventname'].'</a><br>';
 												echo '</td>';
 												echo '<td>';
 												echo $row_event['OrganizationName'];
