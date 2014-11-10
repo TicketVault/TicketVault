@@ -71,14 +71,14 @@
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Event name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="username" type="text" value="<?php echo $row['Eventname']; ?>" class="formBorder" readonly/>
+                  <input name="eventname" type="text" value="<?php echo $row['Eventname']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
 			
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Organization Name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="first name" type="text" value="<?php echo $row['Organization name']; ?>" class="formBorder" readonly/>
+                  <input name="organizationname" type="text" value="<?php echo $row['Organization name']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                          
@@ -87,7 +87,7 @@
                   <td width="72%" align="left" bgcolor="#FFFFFF">
                   <div class="row uniform">
                   <div class="6u">
-				  	<input name="birthday" type="text" value="<?php echo $row['Detail']; ?>" class="formBorder" readonly/>
+				  	<input name="detail" type="text" value="<?php echo $row['Detail']; ?>" class="formBorder" readonly/>
                   </div>
                   </div>
                   </td>
@@ -96,21 +96,21 @@
                   <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Price： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="last name" type="text" value="<?php echo $row['Price']; ?>" class="formBorder" readonly/>
+                  <input name="price" type="text" value="<?php echo $row['Price']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                 
                  <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Location： </td>
                   <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="email" type="text" value="<?php echo $row['Location']; ?>" placeholder=""/ readonly>
+                  <input name="location" type="text" value="<?php echo $row['Location']; ?>" placeholder=""/ readonly>
                   </td>
                 </tr>
                 
                   <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Remaining tickets： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="last name" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
+                  <input name="remainingtickets" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                 
