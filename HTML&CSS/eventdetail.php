@@ -47,15 +47,17 @@
   
 <?php
 	
+	
 	session_start();
-	$EventID = $_SESSION['eventID'];
 	$dbhandle = database_connect();
-	mysqli_query($dbhandle,"USE u907917272_cs307");	
-	
-	
-	$SQLString = "SELECT * FROM event WHERE EventID='$EventID'";
+	$eventname = $_GET['event_name'];
+	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
+	$username['eventname']=$row['Eventname'];
+	$username['organizationname']=$row['OrganizationName'];
+	$username['price']=$row['Price'];
+	$username['detail']=$row['Detail'];
 
 ?> 
 
