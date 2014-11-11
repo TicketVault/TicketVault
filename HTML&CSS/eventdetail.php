@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Profile - TicketVault</title>
+		<title>Event detail - TicketVault</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -40,9 +40,16 @@
 				<div class="row">
 					<div class="12u">
 						<section class="box">
-							<h3>User Profile</h3>
+							<h3>Event Detail</h3>
                             <ul class="actions vertical small">
-                            	<li> <a href="profile(editMode).php">#Edit Your Profile</a></li>
+                            <?php>
+                            	
+                            	session_start();
+                            	if(isset($_SESSION['organizationuser']))
+                            	echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";
+                            	
+                            <?>
+     
                             </ul>
   
 <?php
@@ -64,7 +71,7 @@
   <div id="right">
 		<div class="us_contentBox">
         
-        	<form method="post" action="profile.php">
+        	<form method="post" action="eventdetail.php">
         	
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
