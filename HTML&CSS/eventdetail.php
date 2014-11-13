@@ -60,6 +60,26 @@
 	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
+	
+	$EventID = $row['EventID'];
+	$une = $_SESSION['loginuser'];
+	
+	if (isset($_SESSION['loginuser'])) {
+	
+		   $SQLString = "SELECT * FROM ticket WHERE EventID='$EventID' AND Username='$une'";
+		   $result = mysqli_query($dbhandle, $SQLString);
+		   
+		   if (mysqli_num_rows($result) > 0) {
+		   
+		   	echo "<li><a href=".'"'."cancel.php".'"'." >cancel</a></li>";
+		   }
+		   
+		   else {
+                		
+           	echo "<li><a href=".'"'."reserveticket.php".'"'." >reserve</a></li>";
+		   	echo "<li><a href=".'"'."success.php".'"'." >add to cart</a></li>"; 
+		   }         	
+    }
 ?> 
 
   <div id="right">
@@ -113,16 +133,7 @@
                   </td>
                 </tr>
                 
-                <?php
-                
-                	if (isset($_SESSION['loginuser'])) {
-                	
-                	echo "<li><a href=".'"'."reserveticket.php".'"'." >reserve</a></li>";
-                	echo "<li><a href=".'"'."success.php".'"'." >add to cart</a></li>";
-	                	
-                	}
-              
-                ?>
+               
                 
                </div>
   
