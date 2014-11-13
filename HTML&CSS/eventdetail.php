@@ -68,6 +68,13 @@
 	
 	if (isset($_SESSION['loginuser'])) {
 	
+		   session_start();
+		   $dbhandle = database_connect();
+		   $eventname = $_GET['event_name'];
+		   $SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
+		   $result = mysqli_query($dbhandle, $SQLString);
+		   $row = mysqli_fetch_assoc($result);
+	
 		   $EventID = $row['EventID'];
 		   $UNE = $_SESSION['loginuser'];
 	
@@ -76,12 +83,12 @@
 		   
 		   if (mysqli_num_rows($result) > 0) {
 		   
-		   	echo "<li><a href=".'"'."cancel.php".'"'." >cancel</a></li>";
+		   	echo "<li><a href=".'"'."cancel.php?eventName=".$eventname.'"'." >cancel</a></li>";
 		   }
 		   
 		   else {
                 		
-           	echo "<li><a href=".'"'."reserveticket.php?event_name=".$eventname.'"'." >reserve</a></li>";
+           	echo "<li><a href=".'"'."reserveticket.php?eventName=".$eventname.'"'." >reserve</a></li>";
 		   	echo "<li><a href=".'"'."success.php".'"'." >add to cart</a></li>"; 
 		   }         	
     }
