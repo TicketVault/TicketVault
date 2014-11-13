@@ -35,7 +35,15 @@
 	<?php
 		include('php/Base.php');
 		sub_banner();
+	?>
 		
+    
+			<section id="main" class="container">
+				<header>
+					<h2>Reserve Tickets</h2>
+				</header>
+				
+	<?php
 		session_start();
 		$username = $_SESSION['loginuser'];
 		$dbhandle = database_connect();
@@ -49,7 +57,7 @@
 		$username['email']=$row1['Email'];
 		$username['phone']=$row1['Phone'];
 		
-		$eventname = $_GET['event_name'];
+		$eventname = $_GET['eventname'];
 		$SQLString2 = "SELECT * FROM event WHERE Eventname = '$eventname'";
 		$result2 = mysqli_query($dbhandle, $SQLString2);
 		$row2 = mysqli_fetch_assoc($result2);
@@ -59,11 +67,6 @@
 		$username['detail']=$row2['Detail'];
 		
 	?>
-    
-			<section id="main" class="container">
-				<header>
-					<h2>Reserve Tickets</h2>
-				</header>
 				
 				<form method="post" action="reserveticket-validate.php">
 				<div class="row">
@@ -74,14 +77,14 @@
 								<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
                						<tr>
-                  					<td width="20%" align="right" bgcolor="#FFFFFF">Eventname： </td>
+                  					<td width="20%" align="right" bgcolor="#FFFFFF">Event Name： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
                   					<input name="username" type="text" value="<?php echo $row2['Eventname']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
 				
 				 					<tr>
-                  					<td width="20%" align="right" bgcolor="#FFFFFF">OrganizationName： </td>
+                  					<td width="20%" align="right" bgcolor="#FFFFFF">Organization Name： </td>
                   					<td width="80" align="left" bgcolor="#FFFFFF">
                   					<input name="email" type="text" value="<?php echo $row2['OrganizationName']; ?>" placeholder=""/ readonly>
                   					</td>
