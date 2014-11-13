@@ -42,18 +42,21 @@
 		mysqli_query($dbhandle,"USE u907917272_cs307");	
 	
 	
-		$SQLString = "SELECT * FROM account WHERE Username='$username'";
-		$result1 = mysqli_query($dbhandle, $SQLString);
-		$row = mysqli_fetch_assoc($result1);
-		$username['username']=$row['Username'];
-		$username['email']=$row['Email'];
-		$username['phone']=$row['Phone'];
+		$SQLString1 = "SELECT * FROM account WHERE Username='$username'";
+		$result1 = mysqli_query($dbhandle, $SQLString1);
+		$row1 = mysqli_fetch_assoc($result1);
+		$username['username']=$row1['Username'];
+		$username['email']=$row1['Email'];
+		$username['phone']=$row1['Phone'];
+		
 		$eventname = $_GET['event_name'];
-		$result2 = mysqli_query($dbhandle, "SELECT * FROM account WHERE Eventname='$eventname'");
-		$username['eventname']=$row['Eventname'];
-		$username['organizationname']=$row['OrganizationName'];
-		$username['price']=$row['Price'];
-		$username['detail']=$row['Detail'];
+		$SQLString2 = "SELECT * FROM event WHERE Eventname = '$eventname'";
+		$result2 = mysqli_query($dbhandle, $SQLString2);
+		$row2 = mysqli_fetch_assoc($result2);
+		$username['eventname']=$row2['Eventname'];
+		$username['organizationname']=$row2['OrganizationName'];
+		$username['price']=$row2['Price'];
+		$username['detail']=$row2['Detail'];
 		
 	?>
     
@@ -62,6 +65,7 @@
 					<h2>Reserve Tickets</h2>
 				</header>
 				
+				<form method="post" action="reserveticket-validate.php">
 				<div class="row">
 					<div class="12u">
 							<section class="box">
@@ -72,35 +76,35 @@
                						<tr>
                   					<td width="20%" align="right" bgcolor="#FFFFFF">Eventname： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
-                  					<input name="username" type="text" value="<?php echo $row['Eventname']; ?>" class="formBorder" readonly/>
+                  					<input name="username" type="text" value="<?php echo $row2['Eventname']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
 				
 				 					<tr>
                   					<td width="20%" align="right" bgcolor="#FFFFFF">OrganizationName： </td>
                   					<td width="80" align="left" bgcolor="#FFFFFF">
-                  					<input name="email" type="text" value="<?php echo $row['Organization name']; ?>" placeholder=""/ readonly>
+                  					<input name="email" type="text" value="<?php echo $row2['OrganizationName']; ?>" placeholder=""/ readonly>
                   					</td>
                 					</tr>
                 
                 					<tr>
                  					<td width="20%" align="right" bgcolor="#FFFFFF">Event Description： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
-                  					<input name="first name" type="text" value="<?php echo $row['Detail']; ?>" class="formBorder" readonly/>
+                  					<input name="first name" type="text" value="<?php echo $row2['Detail']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
                 
                 					<tr>
                  	 				<td width="20%" align="right" bgcolor="#FFFFFF">Price： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
-                  					<input name="last name" type="text" value="<?php echo $row['Price']; ?>" class="formBorder" readonly/>
+                  					<input name="last name" type="text" value="<?php echo $row2['Price']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
 									
 									                					<tr>
-                 	 				<td width="20%" align="right" bgcolor="#FFFFFF">Tickets left： </td>
+                 	 				<td width="20%" align="right" bgcolor="#FFFFFF">Remaining Tickets： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
-                  					<input name="last name" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
+                  					<input name="last name" type="text" value="<?php echo $row2['RemainingTickets']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
 								</table>
@@ -111,26 +115,26 @@
                						<tr>
                   					<td width="20%" align="right" bgcolor="#FFFFFF">Username： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
-                  					<input name="username" type="text" value="<?php echo $row['Username']; ?>" class="formBorder" readonly/>
+                  					<input name="username" type="text" value="<?php echo $row1['Username']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
 				
 				 					<tr>
                   					<td width="20%" align="right" bgcolor="#FFFFFF">Email： </td>
                   					<td width="80" align="left" bgcolor="#FFFFFF">
-                  					<input name="email" type="text" value="<?php echo $row['Email']; ?>" placeholder=""/ readonly>
+                  					<input name="email" type="text" value="<?php echo $row1['Email']; ?>" placeholder=""/ readonly>
                   					</td>
                 					</tr>
                 
                 					<tr>
                  					<td width="20%" align="right" bgcolor="#FFFFFF">Phone： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
-                  					<input name="first name" type="text" value="<?php echo $row['Phone']; ?>" class="formBorder" readonly/>
+                  					<input name="first name" type="text" value="<?php echo $row1['Phone']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
                
 								</table>
-
+		
 
 				
                                 
@@ -149,14 +153,7 @@
 
 					</div>
 				</div>
-				<div class="row">
-					<div class="12u">
 
-						<!-- Buttons -->
-							
-
-					</div>
-				</div>
 				
 				
 			</section>
