@@ -44,14 +44,14 @@
                             <ul class="actions vertical small">
                             <?php
                             	
-                            	session_start();
-                            	$dbhandle = database_connect();
-                            	$eventname = $_GET['event_name'];
-                            	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
-								$result = mysqli_query($dbhandle, $SQLString);
-								$row = mysqli_fetch_assoc($result);
+								if(isset($_SESSION['organizationuser'])) { 
                             	
-                            	if(isset($_SESSION['organizationuser'])) { 
+                            		session_start();
+									$dbhandle = database_connect();
+									$eventname = $_GET['event_name'];
+									$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
+									$result = mysqli_query($dbhandle, $SQLString);
+									$row = mysqli_fetch_assoc($result);
                             	
                             		if ($_SESSION['organizationuser'] == $row['OrganizationName']) {
                             		
@@ -65,12 +65,12 @@
   
 <?php	
 	
-	/*session_start();
+	session_start();
 	$dbhandle = database_connect();
-	$eventname = $_GET['eventname'];
+	$eventname = $_GET['event_name'];
 	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	$result = mysqli_query($dbhandle, $SQLString);
-	$row = mysqli_fetch_assoc($result);*/
+	$row = mysqli_fetch_assoc($result);
 	
 	
 	if (isset($_SESSION['loginuser'])) {
