@@ -84,7 +84,7 @@
  		
  	}
  	
- 	header("Location: success.php");
+ 	header("Location: http://http://ticketvault.cu.cc");
  	die();
  	
  	

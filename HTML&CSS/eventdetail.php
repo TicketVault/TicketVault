@@ -85,7 +85,7 @@
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Organization Name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="organizationname" type="text" value="<?php echo $row['Organization name']; ?>" class="formBorder" readonly/>
+                  <input name="organizationname" type="text" value="<?php echo $row['OrganizationName']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                          

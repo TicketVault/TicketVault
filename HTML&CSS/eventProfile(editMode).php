@@ -58,7 +58,7 @@
   
 		<div class="us_contentBox">
 		
-		<form method="post" action="profile(editMode)-validate.php">
+		<form method="post" action="eventProfile(editMode)-validate.php">
 
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
@@ -77,6 +77,13 @@
                 </tr>
                 
                 <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Detail： </td>
+                  <td width="80%" align="left" bgcolor="#FFFFFF">
+                  <input name="lastname" type="text" value="<?php echo $row['Detail']; ?>" placeholder="Enter the Last Name"/>
+                  </td>
+                </tr>
+                
+                <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Price： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
                   <input name="firstname" type="text" value="<?php echo $row['Price']; ?>" placeholder="Enter the First Name"/>
@@ -84,9 +91,16 @@
                 </tr>
                 
                 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Detail： </td>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Location： </td>
+                  <td width="80" align="left" bgcolor="#FFFFFF">
+                  <input name="location" type="text" value="<?php echo $row['Location']; ?>" placeholder=""/ readonly>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Remaining tickets： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="lastname" type="text" value="<?php echo $row['Detail']; ?>" placeholder="Enter the Last Name"/>
+                  <input name="remainingtickets" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                  
