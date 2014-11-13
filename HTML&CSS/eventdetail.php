@@ -42,13 +42,13 @@
 						<section class="box">
 							<h3>Event Detail</h3>
                             <ul class="actions vertical small">
-                            <?php>
+                            <?php
                             	
                             	session_start();
                             	if(isset($_SESSION['organizationuser']))
                             	echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";
                             	
-                            <?>
+                            ?>
      
                             </ul>
   
