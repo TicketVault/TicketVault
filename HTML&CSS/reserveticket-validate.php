@@ -20,10 +20,10 @@
  
  			$result_update = mysqli_query($dbhandle, $SQLupdate);
  
- 		
+ 			
  	}
  	
- 	header("Location: http://http://ticketvault.cu.cc");
+ 	header("Location: TicketSuccess.php");
  	die();
  	
  	
@@ -34,7 +34,7 @@
  		
  		echo '<html>
  				<head>
- 					<meta http-equiv="refresh" content="3;url=eventdetail.php" />
+ 					<meta http-equiv="refresh" content="3;url=UpcomingEvent.php" />
  				</head>
  				<body>';
      	echo "$_err";
