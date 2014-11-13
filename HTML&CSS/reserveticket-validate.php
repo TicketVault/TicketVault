@@ -8,7 +8,9 @@
 	
 	
 	
- 	$username = $_POST['username']; 	
+ 	$username = $_POST['username'];
+	$eventID = $_POST['EventID']; 	
+	
  	if ($_POST['RemainingTickets'] < 1) {
  		
  			printErr ("No tickets available this time, please check back later.");
@@ -16,11 +18,16 @@
  		
  	else {
  		 	 
-			$SQLupdate = "UPDATE account SET ReamainingTickets = '".$_POST['RemainingTickets']." - 1' WHERE Username = '$username'" ;
+			$SQLupdate = "UPDATE account SET ReamainingTickets = '".$_POST['RemainingTickets']." - 1' WHERE EventID = '$eventID'" ;
  
  			$result_update = mysqli_query($dbhandle, $SQLupdate);
+			
+			$ticketID = uniqid (rand(), true);
  
- 			
+ 			$SQLupdate2 = "UPDATE account SET TicketID = 'ticketID' WHERE EventID = '$eventID'" ;
+			
+			$result_update = mysqli_query($dbhandle, $SQLupdate2);
+			
  	}
  	
  	header("Location: TicketSuccess.php");
