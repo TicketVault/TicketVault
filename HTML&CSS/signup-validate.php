@@ -28,13 +28,19 @@
 	else {
 		
 		$hash=hash ('md5',$password);
+		
+		/*
 		$SQLString = "INSERT INTO account (Username,Email,Password)
 		VALUES( '$username','$email', '$hash')";
 		mysqli_query($dbhandle, $SQLString);
 		signup_email($email);
 		session_start();
 		$_SESSION['loginuser']=$username;
-		$_SESSION['DUP'] = 0;
+		$_SESSION['DUP'] = 0;*/
+		
+		$SQLString = "INSERT INTO organizationAccount (Username,Password)
+		VALUES( '$username','$hash')";
+		mysqli_query($dbhandle, $SQLString);
 		
 		header("Location: success.php");
 		die();
