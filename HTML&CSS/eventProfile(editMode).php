@@ -39,7 +39,6 @@
 						<section class="box">
 							<h3>Organization Profile</h3>  	
 <?php
-	
 	session_start();
 	$username = $_SESSION['loginuser'];
 	$dbhandle = database_connect();
@@ -101,6 +100,13 @@
                   <td width="20%" align="right" bgcolor="#FFFFFF">Remaining tickets： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
                   <input name="remainingtickets" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
+                  </td>
+                </tr>
+                
+                 <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">eventID： </td>
+                  <td width="80%" align="left" bgcolor="#FFFFFF">
+                  <input name="lastname" type="text" value="<?php echo $row['EventID']; ?>" placeholder="Enter the Last Name"/>
                   </td>
                 </tr>
                  

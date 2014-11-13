@@ -1,7 +1,7 @@
  <?php
 	
 /*Author: Chengkang Xu*/
-/*Handle interconnection between server and eventProfile(editMode) page*/
+/*Handle interconnection between server and profile(editMode) page*/
 	
 	include('php/Base.php');
 	$dbhandle = database_connect();
@@ -9,8 +9,8 @@
 	
 	
 	
- 	$username = $_POST['username']; 	
- 	if (((!empty($_POST['original_password'])) || (!empty($_POST['new_password'])) || (!empty($_POST['confirm_password']))) && 
+ 	$eventname = $_GET['eventname']; 	
+ 	/*if (((!empty($_POST['original_password'])) || (!empty($_POST['new_password'])) || (!empty($_POST['confirm_password']))) && 
  	(!((!empty($_POST['original_password'])) && (!empty($_POST['new_password'])) && (!empty($_POST['confirm_password']))))) {
  		
  			printErr ("Passwords incomplete!");
@@ -20,71 +20,19 @@
  	(!((!empty($_POST['birthdayMonth'])) && (!empty($_POST['birthdayDay'])) && (!empty($_POST['birthdayYear']))))) {
  		
  			printErr ("Birthday incomplete!");
- 	}
+ 	}*/
  	
- 	else {
- 	
- 		if (!empty($_POST['email'])) {
+ 		if (!empty($_POST['eventname'])) {
  			
  			
- 			$SQLupdate = "UPDATE account SET Email = '".$_POST['email']."' WHERE Username = '$username'" ;
+ 			$SQLupdate = "UPDATE event SET Eventname = '".$_POST['eventname']."' WHERE Eventname = '$eventname'" ;
  
  			$result_update = mysqli_query($dbhandle, $SQLupdate);
  			
  		}
- 		
- 		if (!empty($_POST['firstname'])) {
- 		
- 			$SQLupdate = "UPDATE account SET Firstname = '".$_POST['firstname']."' WHERE Username = '$username'" ;
- 
- 			$result_update = mysqli_query($dbhandle, $SQLupdate);
- 			
- 		}
- 		
- 		if (!empty($_POST['lastname'])) {
- 		
- 			$SQLupdate = "UPDATE account SET Lastname = '".$_POST['lastname']."' WHERE Username = '$username'" ;
- 
- 			$result_update = mysqli_query($dbhandle, $SQLupdate);
- 
- 		}
- 		
- 		
- 		
- 		/*birthday*/
- 		
- 		if ((!empty($_POST['birthdayMonth'])) && (!empty($_POST['birthdayDay'])) && (!empty($_POST['birthdayYear']))) {
- 			
-			$birthday = $_POST['birthdayMonth'] . "/" . $_POST['birthdayDay'] . "/" . $_POST['birthdayYear'];
 
-			$SQLupdate = "UPDATE account SET Birthday = '$birthday' WHERE Username = '$username'" ;
- 
- 			$result_update = mysqli_query($dbhandle, $SQLupdate);		
- 		}
- 		
- 		
- 		/*phone number*/
- 		
- 		if (!empty($_POST['phone'])) {
- 		
- 			$SQLupdate = "UPDATE account SET Phone = '".$_POST['phone']."' WHERE Username = '$username'" ;
- 
- 			$result_update = mysqli_query($dbhandle, $SQLupdate);
- 		}
- 		
- 		/*address*/
- 		
- 		if (!empty($_POST['address'])) {
- 		
- 			$SQLupdate = "UPDATE account SET Address = '".$_POST['address']."' WHERE Username = '$username'" ;
- 
- 			$result_update = mysqli_query($dbhandle, $SQLupdate);
- 			
- 		}
- 		
- 	}
- 	
- 	header("Location: http://http://ticketvault.cu.cc");
+
+ 	header("Location: success.php");
  	die();
  	
  	
