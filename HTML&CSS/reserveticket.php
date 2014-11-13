@@ -10,7 +10,7 @@
 
 <html>
 	<head>
-		<title>TicketVault</title>
+		<title>Reserve Tickets</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -46,9 +46,7 @@
 	<?php
 		session_start();
 		$username = $_SESSION['loginuser'];
-		$dbhandle = database_connect();
-		mysqli_query($dbhandle,"USE u907917272_cs307");	
-	
+		$dbhandle = database_connect();	
 	
 		$SQLString1 = "SELECT * FROM account WHERE Username='$username'";
 		$result1 = mysqli_query($dbhandle, $SQLString1);
@@ -61,10 +59,10 @@
 		$SQLString2 = "SELECT * FROM event WHERE Eventname = '$eventname'";
 		$result2 = mysqli_query($dbhandle, $SQLString2);
 		$row2 = mysqli_fetch_assoc($result2);
-		$username['eventname']=$row2['Eventname'];
-		$username['organizationname']=$row2['OrganizationName'];
-		$username['price']=$row2['Price'];
-		$username['detail']=$row2['Detail'];
+		$eventname['eventname']=$row2['Eventname'];
+		$eventname['organizationname']=$row2['OrganizationName'];
+		$eventname['price']=$row2['Price'];
+		$eventname['detail']=$row2['Detail'];
 		
 	?>
 				
@@ -156,10 +154,8 @@
 
 					</div>
 				</div>
-
-				
-				
-			</section>
+			</form>
+		</section>
     </body>
 	
 	<?php
