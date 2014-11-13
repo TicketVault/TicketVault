@@ -52,8 +52,7 @@
      
                             </ul>
   
-<?php
-	
+<?php	
 	
 	session_start();
 	$dbhandle = database_connect();
@@ -61,11 +60,6 @@
 	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
-	$username['eventname']=$row['Eventname'];
-	$username['organizationname']=$row['OrganizationName'];
-	$username['price']=$row['Price'];
-	$username['detail']=$row['Detail'];
-
 ?> 
 
   <div id="right">
@@ -92,11 +86,9 @@
                 <tr>
                   <td width="28%" align="right" bgcolor="#FFFFFF">Detail： </td>
                   <td width="72%" align="left" bgcolor="#FFFFFF">
-                  <div class="row uniform">
-                  <div class="6u">
+                  
 				  	<input name="detail" type="text" value="<?php echo $row['Detail']; ?>" class="formBorder" readonly/>
-                  </div>
-                  </div>
+               
                   </td>
                 </tr>
                 
@@ -120,6 +112,17 @@
                   <input name="remainingtickets" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
+                
+                <?php
+                
+                	if (isset($_SESSION['loginuser'])) {
+                	
+                	echo "<li><a href=".'"'."reserveticket.php".'"'." >reserve</a></li>";
+                	echo "<li><a href=".'"'."success.php".'"'." >add to cart</a></li>";
+	                	
+                	}
+              
+                ?>
                 
                </div>
   

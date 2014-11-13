@@ -94,7 +94,7 @@
 									                					<tr>
                  	 				<td width="20%" align="right" bgcolor="#FFFFFF">Tickets left： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
-                  					<input name="last name" type="text" value="<?php echo $row['TicketsNum']; ?>" class="formBorder" readonly/>
+                  					<input name="last name" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
 								</table>
