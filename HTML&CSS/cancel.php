@@ -1,4 +1,5 @@
 <?php
+	include('php/Base.php');
 	session_start();
 	$dbhandle = database_connect();
 	$eventname = $_GET['event_name'];
@@ -14,7 +15,7 @@
 	
 	if ($result === TRUE) {
     	
-    	header("Location: profile.php");
+    	header("Location: success.php");
 	} 	   
 
 ?>
