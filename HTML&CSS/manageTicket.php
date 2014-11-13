@@ -66,7 +66,7 @@
                             	echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";*/
 									 $ouser = $_SESSION['organizationuser'];
 									 
-									 $oname = mysqli_query($dbhandle, "SELECT * FROM event WHERE Username ='$ouser'");
+									 $oname = mysqli_query($dbhandle, "SELECT * FROM organizationAccount WHERE Username ='$ouser'");
 									 
 									 $orow = mysqli_fetch_assoc($oname);
 									 
