@@ -52,8 +52,13 @@
 									$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 									$result = mysqli_query($dbhandle, $SQLString);
 									$row = mysqli_fetch_assoc($result);
+									
+									$ouser = $_SESSION['organizationuser'];
+									$SQLString = "SELECT * FROM organizationAccount WHERE Username = '$ouser'";
+									$result = mysqli_query($dbhandle, $SQLString);
+									$check_row = mysqli_fetch_assoc($result);
                             	
-                            		if ($_SESSION['organizationuser'] == $row['OrganizationName']) {
+                            		if ($check_row['organizationName'] == $row['OrganizationName']) {
                             		
                             			echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";
                             		}
