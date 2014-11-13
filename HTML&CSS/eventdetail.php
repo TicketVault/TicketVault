@@ -45,8 +45,19 @@
                             <?php
                             	
                             	session_start();
-                            	if(isset($_SESSION['organizationuser']))
-                            	echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";
+                            	$dbhandle = database_connect();
+                            	$eventname = $_GET['event_name'];
+                            	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
+								$result = mysqli_query($dbhandle, $SQLString);
+								$row = mysqli_fetch_assoc($result);
+                            	
+                            	if(isset($_SESSION['organizationuser'])) { 
+                            	
+                            		if ($_SESSION['organizationuser'] == $row['OrganizationName']) {
+                            		
+                            			echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";
+                            		}
+                            	}
                             	
                             ?>
      
@@ -54,19 +65,20 @@
   
 <?php	
 	
-	session_start();
+	/*session_start();
 	$dbhandle = database_connect();
 	$eventname = $_GET['eventname'];
 	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	$result = mysqli_query($dbhandle, $SQLString);
-	$row = mysqli_fetch_assoc($result);
+	$row = mysqli_fetch_assoc($result);*/
 	
-	$EventID = $row['EventID'];
-	$une = $_SESSION['loginuser'];
 	
 	if (isset($_SESSION['loginuser'])) {
 	
-		   $SQLString = "SELECT * FROM ticket WHERE EventID='$EventID' AND Username='$une'";
+		   $EventID = $row['EventID'];
+		   $UNE = $_SESSION['loginuser'];
+	
+		   $SQLString = "SELECT * FROM ticket WHERE EventID='$EventID' AND Username='$UNE'";
 		   $result = mysqli_query($dbhandle, $SQLString);
 		   
 		   if (mysqli_num_rows($result) > 0) {
