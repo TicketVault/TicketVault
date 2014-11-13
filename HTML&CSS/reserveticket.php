@@ -55,8 +55,8 @@
 		$username['email']=$row1['Email'];
 		$username['phone']=$row1['Phone'];
 		
-		$eventname = $_GET['eventname'];
-		$SQLString2 = "SELECT * FROM event WHERE Eventname = '$eventname'";
+	
+		$SQLString2 = "SELECT * FROM event WHERE Eventname = '".$_GET['eventName']."'";
 		$result2 = mysqli_query($dbhandle, $SQLString2);
 		$row2 = mysqli_fetch_assoc($result2);
 		$eventname['eventname']=$row2['Eventname'];

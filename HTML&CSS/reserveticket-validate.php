@@ -3,22 +3,23 @@
 /*Handle interconnection between server and reserveticket page*/
 	
 	include('php/Base.php');
-	$dbhandle = database_connect();
-	mysqli_query($dbhandle,"USE u907917272_cs307");
+	session_start();
+	$username = $_SESSION['loginuser'];
+	$dbhandle = database_connect();	
+	
+	$SQLString = "SELECT * FROM event WHERE Eventname = '".$_GET['eventName']."'";
+	$result = mysqli_query($dbhandle, $SQLString);
+	$row = mysqli_fetch_assoc($result);
 	
 	
-	
- 	$username = $_POST['username'];
-	$eventID = $_POST['EventID']; 	
-	
- 	if ($_POST['RemainingTickets'] < 1) {
+ 	if ($row['RemainingTickets'] > 1) {
  		
  			printErr ("No tickets available this time, please check back later.");
  	}
  		
  	else {
  		 	 
-			$SQLupdate = "UPDATE account SET ReamainingTickets = '".$_POST['RemainingTickets']." - 1' WHERE EventID = '$eventID'" ;
+			$SQLupdate = "UPDATE account SET ReamainingTickets = '".$row['RemainingTickets']." - 1' WHERE EventID = '$eventID'" ;
  
  			$result_update = mysqli_query($dbhandle, $SQLupdate);
 			

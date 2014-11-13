@@ -33,7 +33,7 @@
 		<!-- Main -->
 			<section id="main" class="container small">
 				<header>
-					<h2>You have successfully booked your tickets!</h2>
+					<h5>You have successfully booked your tickets!</h5>
 					<h5> <h5>
 					<h5><a href="UpcomingEvent.php">click here if the page is not automatically redirected</a></h5>
 					<meta http-equiv="refresh" content="5;url=UpcomingEvent.php" />
