@@ -42,7 +42,7 @@
 				<div class="row">
 					<div class="12u">
 							<section class="box">
-								<h3>Table</h3>
+								<h3>My event</h3>
 								<div class="table-wrapper">
 									<table>
 										<thead>
@@ -57,28 +57,22 @@
 									</body></html>
 									<tbody>
 										<?php
-											$username = $_SESSION['loginuser'];
-											$dbhandle = database_connect();	
-											mysqli_query($dbhandle,"USE u907917272_cs307");			
-
-                            	session_start();
-                            	/*if(isset($_SESSION['organizationuser']))
-                            	echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";*/
-									 $ouser = $_SESSION['organizationuser'];
-									 
-									 $oname = mysqli_query($dbhandle, "SELECT * FROM organizationAccount WHERE Username ='$ouser'");
-									 
-									 $orow = mysqli_fetch_assoc($oname);
-									 
-									 $name = $orow['OrganizationName'];
-									 
-									 
-								
-	$result = mysqli_query($dbhandle, "SELECT * FROM event ORDER BY Eventname WHERE OrganizationName ='$name'");
+										
+											session_start();
+											$dbhandle = database_connect();
+											
+											$ouser = $_SESSION['organizationuser'];
+											$SQLString = "SELECT * FROM organizationAccount WHERE Username = '$ouser'";
+											$result = mysqli_query($dbhandle, $SQLString);
+											$row = mysqli_fetch_assoc($result);
+									
+											$oname = $row['OrganizationName'];
+											$result = mysqli_query($dbhandle, "SELECT * FROM event WHERE OrganizationName='$oname'");
+									
 											while($row=mysqli_fetch_array($result)){
 												echo '<tr>';
 												echo '<td>';
-												echo '<a href = "eventdetail.php?eventname='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
+												echo '<a href = "eventdetail.php?event_name='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
 												echo '</td>';
 												echo '<td>';
 												echo $row['OrganizationName'];
