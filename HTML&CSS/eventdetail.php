@@ -88,7 +88,7 @@
 		   
 		   else {
                 		
-           	echo "<li><a href=".'"'."reserveticket.php".'"'." >reserve</a></li>";
+           	echo "<li><a href=".'"'."reserveticket.php?event_name=".$eventname.'"'." >reserve</a></li>";
 		   	echo "<li><a href=".'"'."success.php".'"'." >add to cart</a></li>"; 
 		   }         	
     }
