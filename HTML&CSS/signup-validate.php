@@ -34,6 +34,7 @@
 		signup_email($email);
 		session_start();
 		$_SESSION['loginuser']=$username;
+		$_SESSION['DUP'] = 0;
 		
 		header("Location: success.php");
 		die();
@@ -43,35 +44,32 @@
 	/*print error*/
 	
 	function printErr ($_err, $username, $email) {
-
-		
-		echo '<html>
-				<head>
-					<meta http-equiv="refresh" content="3;url=signup.php" />
-				</head>
-				<body>';
-    	echo "$_err";
     	
     	session_start();
     	
+    	$_SESSION['DUP'] = $_err;
 		$_SESSION['UN']=$username;
 		$_SESSION['EM']=$email;
+		
+		header('Location: signup.php');
 		
 		die();
 	
 	}
 	
+	
+	
 	/*display duplicate username error*/
 	
 	function hasDuplicateUsername ($username, $email) {
 	
-		printErr('Username is duplicated', $username, $email);
+		printErr(1, $username, $email);
 	}
 	
 	/*display duplicate username error*/
 	
 	function hasDuplicateEmail ($username, $email) {
 	
-		printErr('Email is duplicated', $username, $email);
+		printErr(2, $username, $email);
 	}	
 ?>
