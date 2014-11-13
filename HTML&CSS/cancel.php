@@ -16,5 +16,5 @@
     	
     	header("Location: profile.php");
 	} 	   
-}
+
 ?>
