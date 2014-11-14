@@ -4,38 +4,38 @@
 	
 	include('php/Base.php');
 	
-	session_start();
-	$username = $_SESSION['loginuser'];
 	$dbhandle = database_connect();
-		
 	
-	$SQLString = "SELECT * FROM event WHERE Eventname = '".$_POST['eventname']."'";
+	$eventname = $_POST['eventname'];
+			
+	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
 	//echo "Remaining Tickets";
 	//echo $row['RemainingTickets'];
 	//$eventName = $_POST['eventname'];
-	echo $eventName;
+	
  	if ($row['RemainingTickets'] < 1) {
  			printErr ("No tickets available this time, please check back later.");
  	}
  		
  	else {
-			$NewRemainingTickets = $row['RemainingTickets'] -1;
+			$RemainingTickets = (int)$row['RemainingTickets'];
+			$NRT = $RemainingTickets - 1;
 
-			$SQLupdate = "UPDATE account SET RemainingTickets = '$NewRemainingTickets' WHERE Eventname = '".$_POST['eventname']."'" ;
+			$SQLupdate = "UPDATE event SET RemainingTickets = '$NRT' WHERE Eventname = '$eventname'" ;
  
  			$result_update = mysqli_query($dbhandle, $SQLupdate);
 			
-			//echo $row['RemainingTickets'];
 			
+			$eventID = $row['EventID'];
 			$ticketID = uniqid (rand(), true);
- 
- 			$SQLupdate2 = "UPDATE account SET TicketID = '".$ticketID."' WHERE Eventname = '".$_POST['eventname']."'" ;
+			session_start();
+			$username = $_SESSION['loginuser'];
 			
-			
-			$result_update = mysqli_query($dbhandle, $SQLupdate2);
-			
+			$SQLString = "INSERT INTO ticket (TicketID,EventID,Username)
+			VALUES( '$ticketID','$eventID', '$username')";
+			mysqli_query($dbhandle, $SQLString);
  	}
  	
  	header("Location: TicketSuccess.php");

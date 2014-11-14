@@ -14,8 +14,31 @@
 	$result = mysqli_query($dbhandle, $SQLString);
 	
 	if ($result === TRUE) {
+	
+	
+		$RemainingTickets = (int)$row['RemainingTickets'];
+		$NRT = $RemainingTickets + 1;
+		
+		
+
+		$SQLString = "UPDATE event SET RemainingTickets = '$NRT' WHERE Eventname = '$eventname'" ;
+ 		$result = mysqli_query($dbhandle, $SQLString);
     	
     	header("Location: success.php");
 	} 	   
 
+	/*test*/
+	
+	function printErr ($_err) {
+ 
+ 		
+ 		echo '<html>
+ 				<head>
+ 					<meta http-equiv="refresh" content="3;url=UpcomingEvent.php" />
+ 				</head>
+ 				<body>';
+     	echo "$_err";
+ 		die();
+ 	
+ 	}
 ?>
