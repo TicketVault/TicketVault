@@ -64,7 +64,7 @@
   
 		<div class="us_contentBox">
 		
-		<form method="post" action="eventProfile(editMode)-validate.php" onsubmit="return ValidateForm(this);">
+		<form method="post" action="eventProfile(editMode)-validate.php">
 
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 			
