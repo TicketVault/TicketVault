@@ -98,19 +98,22 @@
  				printErr ('Passwords do not match');
  			}
  			
- 			$result = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username=$username");
  			
- 			$result_password = mysqli_fetch_array($result);
+ 			$hash=hash ('md5',$original_password);
+ 			$SQLString = "SELECT * FROM account WHERE Username='$username' AND Password='$hash'";
+ 			$result = mysqli_query($dbhandle, $SQLString);
+ 			$check=mysqli_num_rows($result);
  			
- 			if ($original_password != $result_password['Password']) {
+ 			if ($check < 1) {
  		
  				printErr ('Password is incorrect');
  			}
  			
  			else {
- 				$SQLupdate = "UPDATE account SET Password = '$new_password' WHERE Username = '$username'" ;
- 
- 				$result_update = mysqli_query($dbhandle, $SQLupdate);
+ 			
+ 				$hash=hash ('md5', $new_password);
+ 				$SQLupdate = "UPDATE account SET Password = '$hash' WHERE Username = '$username'" ;
+ 				$result = mysqli_query($dbhandle, $SQLupdate);
  			}
  		}
  	}
