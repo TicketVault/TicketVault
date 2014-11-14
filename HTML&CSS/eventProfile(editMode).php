@@ -37,7 +37,7 @@
 				<div class="row">
 					<div class="12u">
 						<section class="box">
-							<h3>Organization Profile</h3>  	
+							<h3>Edit Event</h3>  	
 <?php
 	session_start();
 	$username = $_SESSION['loginuser'];
