@@ -23,13 +23,16 @@
  	else {
 			$NewRemainingTickets = $row['RemainingTickets'] -1;
 
-			$SQLupdate = "UPDATE account SET ReamainingTickets = '".$NewRemainingTickets."' WHERE Eventname = '".$_POST['eventname']."'" ;
+			$SQLupdate = "UPDATE account SET RemainingTickets = '$NewRemainingTickets' WHERE Eventname = '".$_POST['eventname']."'" ;
  
  			$result_update = mysqli_query($dbhandle, $SQLupdate);
+			
+			//echo $row['RemainingTickets'];
 			
 			$ticketID = uniqid (rand(), true);
  
  			$SQLupdate2 = "UPDATE account SET TicketID = '".$ticketID."' WHERE Eventname = '".$_POST['eventname']."'" ;
+			
 			
 			$result_update = mysqli_query($dbhandle, $SQLupdate2);
 			
