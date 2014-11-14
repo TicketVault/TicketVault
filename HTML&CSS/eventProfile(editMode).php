@@ -64,7 +64,7 @@
 				 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Eventname： </td>
                   <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="EVENTNAME" type="text" value="<?php echo $row['Eventname']; ?>" placeholder="Email"/>
+                  <input name="EVENTNAME" type="text" value="<?php echo $row['Eventname']; ?>" placeholder="Please enter event name"/>
                   </td>
                 </tr>
 				
@@ -72,14 +72,14 @@
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Detail： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="detail" type="text" value="<?php echo $row['Detail']; ?>" placeholder="Enter the Last Name"/>
+                  <input name="detail" type="text" value="<?php echo $row['Detail']; ?>" placeholder="Please enter details"/>
                   </td>
                 </tr>
                 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Price： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="price" type="text" value="<?php echo $row['Price']; ?>" placeholder="Enter the First Name"/>
+                  <input name="price" type="text" value="<?php echo $row['Price']; ?>" placeholder="Please enter the rice"/>
                   </td>
                 </tr>
                 
