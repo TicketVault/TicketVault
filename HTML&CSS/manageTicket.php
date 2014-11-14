@@ -34,7 +34,7 @@
 		<!-- Main -->
 			<section id="main" class="container">
 				<header>
-					<h2>Upcoming event</h2>
+					<h2>Manage event</h2>
 					<p></p>
 				</header>
 				
