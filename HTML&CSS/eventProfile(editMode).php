@@ -64,51 +64,40 @@
 				 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Eventname： </td>
                   <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="email" type="text" value="<?php echo $row['Eventname']; ?>" placeholder="Email"/>
+                  <input name="EVENTNAME" type="text" value="<?php echo $row['Eventname']; ?>" placeholder="Email"/>
                   </td>
                 </tr>
 				
-				 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">OrganizationName： </td>
-                  <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="email" type="text" value="<?php echo $row['OrganizationName']; ?>" placeholder="Email"/>
-                  </td>
-                </tr>
                 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Detail： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="lastname" type="text" value="<?php echo $row['Detail']; ?>" placeholder="Enter the Last Name"/>
+                  <input name="detail" type="text" value="<?php echo $row['Detail']; ?>" placeholder="Enter the Last Name"/>
                   </td>
                 </tr>
                 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Price： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="firstname" type="text" value="<?php echo $row['Price']; ?>" placeholder="Enter the First Name"/>
+                  <input name="price" type="text" value="<?php echo $row['Price']; ?>" placeholder="Enter the First Name"/>
                   </td>
                 </tr>
                 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Location： </td>
                   <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="location" type="text" value="<?php echo $row['Location']; ?>" placeholder=""/ readonly>
+                  <input name="location" type="text" value="<?php echo $row['Location']; ?>" placeholder=""/>
                   </td>
                 </tr>
                 
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Remaining tickets： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="remainingtickets" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder" readonly/>
+                  <input name="remainingtickets" type="text" value="<?php echo $row['RemainingTickets']; ?>" class="formBorder"/>
                   </td>
                 </tr>
                 
-                 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">eventID： </td>
-                  <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="lastname" type="text" value="<?php echo $row['EventID']; ?>" placeholder="Enter the Last Name"/>
-                  </td>
-                </tr>
+                
                  
 
 		</table>
