@@ -60,7 +60,7 @@
                             	
                             		if ($check_row['OrganizationName'] == $row['OrganizationName']) {
                             		
-                            			echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";
+                            			echo "<li><a href=".'"'."eventProfile(editMode).php?eventName=".$eventname.'"'." >#Edit Event</a></li>";
                             		}
                             	}
                             	

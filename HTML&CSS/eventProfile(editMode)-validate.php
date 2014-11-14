@@ -50,7 +50,7 @@
 
  	}
  				
- 	header("Location: success.php");
+ 	header("Location: manageTicket.php");
  	die();
  	
  	

@@ -53,8 +53,9 @@
 	$dbhandle = database_connect();
 	mysqli_query($dbhandle,"USE u907917272_cs307");	
 	
+	$eventname = $_GET['eventName'];
+	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	
-	$SQLString = "SELECT * FROM event";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
 	
@@ -111,16 +112,14 @@
                 </tr>
                 
                 
-                 
-
-		</table>
-        		<tr>
+                 <tr>
       				<td colspan="2" align="center" bgcolor="#FFFFFF">
-        			<input name="act" type="hidden" value="act_edit_password" />
-        			<input type="submit" name = "submit" id="button" value="submit changes"/>
+        			<input type="submit" name = "submit" id="button" value="submit"/>
 					</td>
 				</tr>
-			</table>
+
+				
+					
    
 		</div>
 		</form>
