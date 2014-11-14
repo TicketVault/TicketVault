@@ -47,18 +47,9 @@
 				<div class="row">
 					<div class="12u">
 						<section class="box">
-							<h3>Edit Event</h3>  	
+							<h3>Create Event</h3>  	
 <?php
 	session_start();
-	$dbhandle = database_connect();
-	mysqli_query($dbhandle,"USE u907917272_cs307");	
-	
-	$eventname = $_GET['eventName'];
-	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
-	
-	$result = mysqli_query($dbhandle, $SQLString);
-	$row = mysqli_fetch_assoc($result);
-	
 ?> 
   <div id="right">
   
