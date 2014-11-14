@@ -12,8 +12,10 @@
 	$password=$_POST['password'];
 	$password_validate=$_POST['password_validate'];
 		
-	$result_username = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username=$username");
-	$result_email = mysqli_query($dbhandle, "SELECT * FROM account WHERE Email=$email");
+	$result_username = mysqli_query($dbhandle, "SELECT * FROM account WHERE Username='$username'");
+	$result_email = mysqli_query($dbhandle, "SELECT * FROM account WHERE Email='$email'");
+	
+	
 		
 	if (mysqli_num_rows($result_username) > 0) {
 		
@@ -46,6 +48,21 @@
 		die();
 	}
 	
+	/*test*/
+ 	
+ 	function pErr ($_err) {
+ 
+ 		
+ 		echo '<html>
+ 				<head>
+ 					<meta http-equiv="refresh" content="3;url=success.php" />
+ 				</head>
+ 				<body>';
+     	echo "$_err";
+ 		die();
+ 	
+ 	}
+	
 	
 	/*print error*/
 	
@@ -57,7 +74,7 @@
 		$_SESSION['UN']=$username;
 		$_SESSION['EM']=$email;
 		
-		header('Location: signup.php');
+		header("Location: signup.php");
 		
 		die();
 	

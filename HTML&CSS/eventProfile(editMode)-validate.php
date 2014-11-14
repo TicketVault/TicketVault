@@ -49,9 +49,9 @@
  		$result_update = mysqli_query($dbhandle, $SQLupdate);
 
  	}
- 				
- 	header("Location: manageTicket.php");
- 	die();
+ 	
+ 	header('Location: successEditEvent.php');
+	die();
  	
  	
  	/*print error*/
@@ -61,7 +61,7 @@
  		
  		echo '<html>
  				<head>
- 					<meta http-equiv="refresh" content="3;url=profile(editMode).php" />
+ 					<meta http-equiv="refresh" content="3;url=successEditEvent.php" />
  				</head>
  				<body>';
      	echo "$_err";

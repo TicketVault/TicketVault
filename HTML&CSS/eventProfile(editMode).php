@@ -93,7 +93,7 @@
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Price： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="price" type="text" value="<?php echo $row['Price']; ?>" placeholder="Please enter the rice"/>
+                  <input name="price" type="text" value="<?php echo $row['Price']; ?>" placeholder="Please enter the price"/>
                   </td>
                 </tr>
                 
