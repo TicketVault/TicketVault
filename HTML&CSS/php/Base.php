@@ -18,6 +18,7 @@
 				echo "<nav id=".'"'."nav".'"'.">";
 				echo "<ul>";
 				echo "<li><a href=".'"'."http://ticketvault.cu.cc".'"'." >Home</a></li>";
+				echo "<li><a href=".'"'."createevent.php".'"'." >Create Event</a></li>";	
 				echo "<li><a href=".'"'."eventmanage.php".'"'." >Manage Event</a></li>";	
 				echo "<li><a href=".'"'."UpcomingEvent.php".'"'." >Upcoming Event</a></li>";
 				echo "<li><a href=".'"'."php/Logout.php".'"'." class=".'"'."button".'"'.">logout</a></li>";
@@ -53,6 +54,7 @@
 				echo "<nav id=".'"'."nav".'"'.">";
 				echo "<ul>";
 				echo "<li><a href=".'"'."http://ticketvault.cu.cc".'"'." >Home</a></li>";
+				echo "<li><a href=".'"'."createevent.php".'"'." >Create Event</a></li>";	
 				echo "<li><a href=".'"'."eventmanage.php".'"'." >Manage Event</a></li>";	
 				echo "<li><a href=".'"'."UpcomingEvent.php".'"'." >Upcoming Event</a></li>";
 				echo "<li><a href=".'"'."php/Logout.php".'"'." class=".'"'."button".'"'.">logout</a></li>";
