@@ -28,7 +28,7 @@
  		
  	if (!empty($_POST['price'])) {
  		
- 		$SQLupdate = "UPDATE event SET Price = '".$_POST['lastname']."' WHERE OrganizationName = '$orgname'" ;
+ 		$SQLupdate = "UPDATE event SET Price = '".$_POST['price']."' WHERE OrganizationName = '$orgname'" ;
  
  		$result_update = mysqli_query($dbhandle, $SQLupdate);
 
