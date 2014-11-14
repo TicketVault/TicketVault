@@ -65,7 +65,8 @@
 		$eventname['detail']=$row2['Detail'];
 		
 	?>
-				
+	
+			
 				<form method="post" action="reserveticket-validate.php">
 				<div class="row">
 					<div class="12u">
