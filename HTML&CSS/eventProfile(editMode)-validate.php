@@ -50,23 +50,10 @@
 
  	}
  	
- 	printErr("No err");
- 	header("Location: successEditEvent.php");
+ 	
+ 	header("Location: manageTicket.php");
 	die();
  	
  	
- 	/*print error*/
  	
- 	function printErr ($_err) {
- 
- 		
- 		echo '<html>
- 				<head>
- 					<meta http-equiv="refresh" content="3;url=successEditEvent.php" />
- 				</head>
- 				<body>';
-     	echo "$_err";
- 		die();
- 	
- 	}
  ?>
