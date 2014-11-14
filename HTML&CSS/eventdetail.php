@@ -58,7 +58,7 @@
 									$result = mysqli_query($dbhandle, $SQLString);
 									$check_row = mysqli_fetch_assoc($result);
                             	
-                            		if ($check_row['organizationName'] == $row['OrganizationName']) {
+                            		if ($check_row['OrganizationName'] == $row['OrganizationName']) {
                             		
                             			echo "<li><a href=".'"'."eventProfile(editMode).php".'"'." >#Edit Event</a></li>";
                             		}
