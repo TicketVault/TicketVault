@@ -21,20 +21,21 @@
  	}
  		
  	else {
- 		 	 
-			$SQLupdate = "UPDATE account SET ReamainingTickets = '".$row['RemainingTickets']." - 1' WHERE eventName = '$eventName'" ;
+			$NewRemainingTickets = $row['RemainingTickets'] -1;
+
+			$SQLupdate = "UPDATE account SET ReamainingTickets = '".$NewRemainingTickets."' WHERE Eventname = '".$_POST['eventname']."'" ;
  
  			$result_update = mysqli_query($dbhandle, $SQLupdate);
 			
 			$ticketID = uniqid (rand(), true);
  
- 			$SQLupdate2 = "UPDATE account SET TicketID = '".$ticketID."' WHERE eventName = '$eventName'" ;
+ 			$SQLupdate2 = "UPDATE account SET TicketID = '".$ticketID."' WHERE Eventname = '".$_POST['eventname']."'" ;
 			
 			$result_update = mysqli_query($dbhandle, $SQLupdate2);
 			
  	}
  	
- 	//header("Location: TicketSuccess.php");
+ 	header("Location: TicketSuccess.php");
  	die();
  	
  	
