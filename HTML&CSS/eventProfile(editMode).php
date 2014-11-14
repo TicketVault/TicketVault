@@ -17,6 +17,16 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		<script type="text/javascript">
+			function ValidateForm(frm) {
+				if (frm.eventname.value == "") {alert('Eventname is required.');frm.username.focus();return false;}
+				if (frm.price.value == "") {alert('Price is required.');frm.email.focus();return false;}
+				if (frm.location.value == "") {alert('Location is required.');frm.password.focus();return false;}
+				if (frm.remainingtickets.value == "") {alert('Remaining tickets is required.');frm.password.focus();return false;}
+			
+			return true; 
+		}
+		</script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -40,7 +50,6 @@
 							<h3>Edit Event</h3>  	
 <?php
 	session_start();
-	$username = $_SESSION['loginuser'];
 	$dbhandle = database_connect();
 	mysqli_query($dbhandle,"USE u907917272_cs307");	
 	
@@ -48,23 +57,27 @@
 	$SQLString = "SELECT * FROM event";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
-	$username['eventname']=$row['Eventname'];
-	$username['organizationname']=$row['OrganizationName'];
-	$username['price']=$row['Price'];
-	$username['detail']=$row['Detail'];
+	
 ?> 
   <div id="right">
   
 		<div class="us_contentBox">
 		
-		<form method="post" action="eventProfile(editMode)-validate.php">
+		<form method="post" action="eventProfile(editMode)-validate.php" onsubmit="return ValidateForm(this);">
 
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+			
+				 <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Organization name： </td>
+                  <td width="80" align="left" bgcolor="#FFFFFF">
+                  <input name="orgname" type="text" value="<?php echo $row['OrganizationName']; ?>" placeholder="Please enter event name"/readonly>
+                  </td>
+                </tr>
 
 				 <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Eventname： </td>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Event name： </td>
                   <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="EVENTNAME" type="text" value="<?php echo $row['Eventname']; ?>" placeholder="Please enter event name"/>
+                  <input name="eventname" type="text" value="<?php echo $row['Eventname']; ?>" placeholder="Please enter event name"/>
                   </td>
                 </tr>
 				

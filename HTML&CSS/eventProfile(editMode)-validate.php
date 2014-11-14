@@ -1,37 +1,55 @@
  <?php
 	
-/*Author: Chengkang Xu*/
-/*Handle interconnection between server and profile(editMode) page*/
+/*Handle interconnection between server and eventProfile(editMode) page*/
 	
 	include('php/Base.php');
 	$dbhandle = database_connect();
 	mysqli_query($dbhandle,"USE u907917272_cs307");
 	
-	
-	
- 	$eventname = $_GET['eventname']; 	
- 	/*if (((!empty($_POST['original_password'])) || (!empty($_POST['new_password'])) || (!empty($_POST['confirm_password']))) && 
- 	(!((!empty($_POST['original_password'])) && (!empty($_POST['new_password'])) && (!empty($_POST['confirm_password']))))) {
+ 	$orgname = $_POST['orgname']; 	
+ 
+ 	
+	if (!empty($_POST['eventname'])) {
+ 			
+ 			
+ 		$SQLupdate = "UPDATE event SET Eventname = '".$_POST['eventname']."' WHERE OrganizationName = '$orgname'" ;
+ 
+ 		$result_update = mysqli_query($dbhandle, $SQLupdate);
+ 			
+ 	}
  		
- 			printErr ("Passwords incomplete!");
+ 	if (!empty($_POST['detail'])) {
+ 		
+ 		$SQLupdate = "UPDATE event SET Detail = '".$_POST['detail']."' WHERE OrganizationName = '$orgname'" ;
+ 
+ 		$result_update = mysqli_query($dbhandle, $SQLupdate);
+ 			
+ 	}
+ 		
+ 	if (!empty($_POST['price'])) {
+ 		
+ 		$SQLupdate = "UPDATE event SET Price = '".$_POST['lastname']."' WHERE OrganizationName = '$orgname'" ;
+ 
+ 		$result_update = mysqli_query($dbhandle, $SQLupdate);
+
  	}
  	
- 	else if (((!empty($_POST['birthdayMonth'])) || (!empty($_POST['birthdayDay'])) || (!empty($_POST['birthdayYear']))) && 
- 	(!((!empty($_POST['birthdayMonth'])) && (!empty($_POST['birthdayDay'])) && (!empty($_POST['birthdayYear']))))) {
+ 	if (!empty($_POST['location'])) {
  		
- 			printErr ("Birthday incomplete!");
- 	}*/
- 	
- 		if (!empty($_POST['eventname'])) {
- 			
- 			
- 			$SQLupdate = "UPDATE event SET Eventname = '".$_POST['eventname']."' WHERE Eventname = '$eventname'" ;
+ 		$SQLupdate = "UPDATE event SET Location = '".$_POST['location']."' WHERE OrganizationName = '$orgname'" ;
  
- 			$result_update = mysqli_query($dbhandle, $SQLupdate);
- 			
- 		}
+ 		$result_update = mysqli_query($dbhandle, $SQLupdate);
 
+ 	}
+ 	
+ 	if (!empty($_POST['remainingtickets'])) {
+ 		
+ 		$SQLupdate = "UPDATE event SET RemainingTickets = '".$_POST['remainingtickets']."' WHERE OrganizationName = '$orgname'" ;
+ 
+ 		$result_update = mysqli_query($dbhandle, $SQLupdate);
 
+ 	}
+ 				
  	header("Location: success.php");
  	die();
  	
