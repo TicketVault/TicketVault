@@ -35,7 +35,7 @@
 				<header>
 					<h5>You have successfully booked your tickets!</h5>
 					<h5> <h5>
-					<h5><a href="UpcomingEvent.php">click here if the page is not automatically redirected</a></h5>
+					<h5><a href="userticket.php">click here if the page is not automatically redirected</a></h5>
 					<meta http-equiv="refresh" content="5;url=UpcomingEvent.php" />
 				</header>
 				
