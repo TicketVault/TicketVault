@@ -1,4 +1,4 @@
- <?php
+  <?php
 	
 /*Handle interconnection between server and reserveticket page*/
 	
@@ -6,13 +6,16 @@
 	
 	session_start();
 	$username = $_SESSION['loginuser'];
-	$dbhandle = database_connect();	
+	$dbhandle = database_connect();
+		
 	
-	$SQLString = "SELECT * FROM event WHERE Eventname = '".$_GET['eventName']."'";
+	$SQLString = "SELECT * FROM event WHERE Eventname = '".$_POST['eventname']."'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
-
-	
+	//echo "Remaining Tickets";
+	//echo $row['RemainingTickets'];
+	//$eventName = $_POST['eventname'];
+	echo $eventName;
  	if ($row['RemainingTickets'] < 1) {
  			printErr ("No tickets available this time, please check back later.");
  	}
@@ -31,7 +34,7 @@
 			
  	}
  	
- 	header("Location: TicketSuccess.php");
+ 	//header("Location: TicketSuccess.php");
  	die();
  	
  	

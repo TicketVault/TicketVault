@@ -78,7 +78,7 @@
                						<tr>
                   					<td width="20%" align="right" bgcolor="#FFFFFF">Event Name： </td>
                   					<td width="80%" align="left" bgcolor="#FFFFFF">
-                  					<input name="username" type="text" value="<?php echo $row2['Eventname']; ?>" class="formBorder" readonly/>
+                  					<input name="eventname" type="text" value="<?php echo $row2['Eventname']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
 				
