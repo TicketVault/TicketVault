@@ -105,17 +105,18 @@
         	
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
-                <tr>
-                  <td width="20%" align="right" bgcolor="#FFFFFF">Event name： </td>
-                  <td width="80%" align="left" bgcolor="#FFFFFF">
-                  <input name="eventname" type="text" value="<?php echo $row['Eventname']; ?>" class="formBorder" readonly/>
-                  </td>
-                </tr>
-			
+                	
                 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Organization Name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
                   <input name="organizationname" type="text" value="<?php echo $row['OrganizationName']; ?>" class="formBorder" readonly/>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Event name： </td>
+                  <td width="80%" align="left" bgcolor="#FFFFFF">
+                  <input name="eventname" type="text" value="<?php echo $row['Eventname']; ?>" class="formBorder" readonly/>
                   </td>
                 </tr>
                          

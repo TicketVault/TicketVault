@@ -20,7 +20,6 @@
 		$NRT = $RemainingTickets + 1;
 		
 		
-
 		$SQLString = "UPDATE event SET RemainingTickets = '$NRT' WHERE Eventname = '$eventname'" ;
  		$result = mysqli_query($dbhandle, $SQLString);
     	

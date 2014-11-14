@@ -50,7 +50,8 @@
 
  	}
  	
- 	header('Location: successEditEvent.php');
+ 	printErr("No err");
+ 	header("Location: successEditEvent.php");
 	die();
  	
  	
