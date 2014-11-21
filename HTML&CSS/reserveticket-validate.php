@@ -29,7 +29,8 @@
 			
 			
 			$eventID = $row['EventID'];
-			$ticketID = uniqid (rand(), true);
+			$ticketID = $event_ID = hash("md5",rand());		
+
 			session_start();
 			$username = $_SESSION['loginuser'];
 			
