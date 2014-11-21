@@ -11,6 +11,11 @@
 	$location_insert = $_POST['location'];
 	$remainingtickets_insert = $_POST['remainingtickets'];
 	$orgname_insert = $_POST['orgname'];
+	$year = $_POST['EventYear'];
+	$month= $_POST['EventMonth'];
+	$day= $_POST['EventDay'];
+	$hour= $_POST['TimeHours'];
+	$minute= $_POST['TimeMinute'];
 	$event_ID = hash("md5",rand());		
 	$SQLString = "INSERT INTO event (OrganizationName,Eventname,Detail,Price,Location,RemainingTickets,EventID)VALUES( '$orgname_insert','$eventname_insert', '$detail_insert','$price_insert','$location_insert','$remainingtickets_insert','$event_ID')";
 	mysqli_query($dbhandle, $SQLString);
