@@ -5,7 +5,6 @@ $dbhandle = mysqli_connect("mysql.hostinger.co.uk","u907917272_cs307","CS307TEAM
 		{
   			echo "Failed to connect to MySQL: " . mysqli_connect_error();
   		}
-  		return $dbhandle; 
 
 
 
