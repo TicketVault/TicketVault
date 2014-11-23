@@ -41,17 +41,6 @@
 			<!-- banner -->
 			<section id="banner">
 				
-					<p>Search for Event or Organazation</p>				
-				<form>
-					<div class="row uniform half collapse-at-2">
-						<div class="6u">
-							<input type="text"  placeholder="Event Name" />
-						</div>
-						<div class="3u">
-							<input type="submit" value="Search" class="fit" />
-						</div>
-					</div>
-				</form>
 			</section>
 			
 		<!-- Footer -->
