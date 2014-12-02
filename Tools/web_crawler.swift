@@ -18,6 +18,7 @@ var key_length = countElements(key)
 var j = 0;
 var m = 0;
 var error:NSError?
+var organizationsName:String
 //println(key)
 for(i=1;i<103;i++){
     index = i
@@ -30,7 +31,13 @@ for(i=1;i<103;i++){
     var datastring = String(datastring_NSString!)
     var data_string_length = countElements(datastring)
     while var match = datastring.rangeOfString(myRegex, options: .RegularExpressionSearch){
-        println(datastring[match])
+        organizationsName = String(datastring[match])
+        var remove = organizationsName.rangeOfString(key, options:nil)
+        organizationsName.replaceRange(remove!, with: "")
+        remove = organizationsName.rangeOfString("</a>", options:nil)
+        organizationsName.replaceRange(remove!, with: "")
+        println(organizationsName)
+        //datastring[match].writeToFile("data.txt", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
         datastring.replaceRange(match, with: " ")
     }
 }
