@@ -22,11 +22,14 @@
  	else {
 			$RemainingTickets = (int)$row['RemainingTickets'];
 			$NRT = $RemainingTickets - 1;
-
 			$SQLupdate = "UPDATE event SET RemainingTickets = '$NRT' WHERE Eventname = '$eventname'" ;
- 
  			$result_update = mysqli_query($dbhandle, $SQLupdate);
-			
+ 			
+			$SoldTicket = (int)$row['SoldTickets'];
+			$NRT = $SoldTicket + 1;
+			$SQLupdate = "UPDATE event SET SoldTickets = '$NRT' WHERE Eventname = '$eventname'" ;
+			$result_update = mysqli_query($dbhandle, $SQLupdate);
+
 			
 			$eventID = $row['EventID'];
 			$ticketID = $event_ID = hash("md5",rand());		
