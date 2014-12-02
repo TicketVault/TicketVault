@@ -50,6 +50,7 @@
 				echo "<li><a href=".'"'."UpcomingEvent.php".'"'." >Upcoming Event</a></li>";
 				echo "<li><a href=".'"'."profile.php".'"'." >Profile</a></li>";
 				echo "<li><a href=".'"'."php/Logout.php".'"'." class=".'"'."button".'"'.">logout</a></li>";
+				echo "<li><a href=".'"'."help.php".'"'." >Help</a></li>";
 				echo "</ul>";
 				echo "</nav>";
 			}else if(isset($_SESSION['organizationuser'])){
@@ -60,6 +61,7 @@
 				echo "<li><a href=".'"'."manageTicket.php".'"'." >Manage Event</a></li>";	
 				echo "<li><a href=".'"'."UpcomingEvent.php".'"'." >Upcoming Event</a></li>";
 				echo "<li><a href=".'"'."php/Logout.php".'"'." class=".'"'."button".'"'.">logout</a></li>";
+				echo "<li><a href=".'"'."help.php".'"'." >Help</a></li>";
 				echo "</ul>";
 				echo "</nav>";
 			}else{
@@ -69,6 +71,7 @@
 				echo "<li><a href=".'"'."UpcomingEvent.php".'"'." >Upcoming Event</a></li>";
 				echo "<li><a href=".'"'."signup.php".'"'." class=".'"'."button".'"'.">Sign Up</a></li>";
 				echo "<li><a href=".'"'."login.php".'"'." class=".'"'."button".'"'.">login</a></li>";
+				echo "<li><a href=".'"'."help.php".'"'." >Help</a></li>";
 				echo "</ul>";
 				echo "</nav>";
 			}
