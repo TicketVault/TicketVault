@@ -16,8 +16,9 @@
 	$day= $_POST['EventDay'];
 	$hour= $_POST['TimeHours'];
 	$minute= $_POST['TimeMinute'];
+	$category = $_POST['category'];
 	$event_ID = hash("md5",rand());		
-	$SQLString = "INSERT INTO event (OrganizationName,Eventname,Detail,Price,Location,RemainingTickets,EventID)VALUES( '$orgname_insert','$eventname_insert', '$detail_insert','$price_insert','$location_insert','$remainingtickets_insert','$event_ID')";
+	$SQLString = "INSERT INTO event (OrganizationName,Eventname,Detail,Price,Location,RemainingTickets,EventID,Category)VALUES( '$orgname_insert','$eventname_insert', '$detail_insert','$price_insert','$location_insert','$remainingtickets_insert','$event_ID','$category')";
 	mysqli_query($dbhandle, $SQLString);
 	//echo "done";
 	//echo $event_ID;

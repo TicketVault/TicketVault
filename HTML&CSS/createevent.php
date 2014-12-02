@@ -102,6 +102,17 @@
                   </td>
                 </tr>
                 
+                
+                <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Category： </td>
+                  <td width="80%" align="left" bgcolor="#FFFFFF">
+				  <div class="row uniform half collpase-at-2">
+                  <div class="6u">
+                  <select name="category"></option><option value="Month" selected>Please Select</option><option value="Sport">Sport</option><option value="Gaming">Gaming</option><option value="Picnic">Picnic</option><option value="Meeting">Meeting</option><option value="Trip">Trip</option><</select>
+                  </div>
+                  </td>
+                </tr>
+                
                 <tr>
                   <td width="28%" align="right" bgcolor="#FFFFFF">Date： </td>
                   <td width="72%" align="left" bgcolor="#FFFFFF">
