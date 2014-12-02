@@ -145,9 +145,7 @@
                                         <li>
         									<input type="submit" value="Reserve"/>
                                         </li>
-                                        <li>
-                              		    	<a href="eventdetail.php">Back to event details page</a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                                 
