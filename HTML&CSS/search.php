@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -67,35 +66,105 @@
 													$SQLString = "SELECT * FROM event WHERE Eventname = '".$searchword."' AND Category='Sport'";
 													$result = mysqli_query($dbhandle, $SQLString);
 													while($row=mysqli_fetch_array($result)){
-												echo '<tr>';
-												echo '<td>';
-												echo '<a href = "eventdetail.php?event_name='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
-												echo '</td>';
-												echo '<td>';
-												echo $row['OrganizationName'];
-												echo '</td>';
-												echo '<td>';
-												echo $row['Detail'];
-												echo '</td>';
-												echo '<td>';
-												echo $row['Price'];
-												echo '</td>';
-												echo '</tr>';
-											}
-													echo "1";
+														echo '<tr>';
+														echo '<td>';
+														echo '<a href = "eventdetail.php?event_name='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
+														echo '</td>';
+														echo '<td>';
+														echo $row['OrganizationName'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Detail'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Price'];
+														echo '</td>';
+														echo '</tr>';
+												}
 											}
 											else if ($selected_val==2){
-														echo"2";	
+												$SQLString = "SELECT * FROM event WHERE Eventname = '".$searchword."' AND Category='Gaming'";
+													$result = mysqli_query($dbhandle, $SQLString);
+													while($row=mysqli_fetch_array($result)){
+														echo '<tr>';
+														echo '<td>';
+														echo '<a href = "eventdetail.php?event_name='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
+														echo '</td>';
+														echo '<td>';
+														echo $row['OrganizationName'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Detail'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Price'];
+														echo '</td>';
+														echo '</tr>';
+												}
 											}
 											else if($selected_val==3){
 
-														echo "3";	
+														//echo "3";	
+												$SQLString = "SELECT * FROM event WHERE Eventname = '".$searchword."' AND Category='Picnic'";
+													$result = mysqli_query($dbhandle, $SQLString);
+													while($row=mysqli_fetch_array($result)){
+														echo '<tr>';
+														echo '<td>';
+														echo '<a href = "eventdetail.php?event_name='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
+														echo '</td>';
+														echo '<td>';
+														echo $row['OrganizationName'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Detail'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Price'];
+														echo '</td>';
+														echo '</tr>';
+												}
 											}
 											else if ($selected_val==4) {
-															echo "4";
+															//echo "4";
+												$SQLString = "SELECT * FROM event WHERE Eventname = '".$searchword."' AND Category='Meeting'";
+													$result = mysqli_query($dbhandle, $SQLString);
+													while($row=mysqli_fetch_array($result)){
+														echo '<tr>';
+														echo '<td>';
+														echo '<a href = "eventdetail.php?event_name='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
+														echo '</td>';
+														echo '<td>';
+														echo $row['OrganizationName'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Detail'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Price'];
+														echo '</td>';
+														echo '</tr>';
+												}
 											}
 											else{
-														echo "5";
+														//echo "5";
+												$SQLString = "SELECT * FROM event WHERE Eventname = '".$searchword."' AND Category='Trip'";
+													$result = mysqli_query($dbhandle, $SQLString);
+													while($row=mysqli_fetch_array($result)){
+														echo '<tr>';
+														echo '<td>';
+														echo '<a href = "eventdetail.php?event_name='.$row['Eventname'].'">'.$row['Eventname'].'</a><br>';
+														echo '</td>';
+														echo '<td>';
+														echo $row['OrganizationName'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Detail'];
+														echo '</td>';
+														echo '<td>';
+														echo $row['Price'];
+														echo '</td>';
+														echo '</tr>';
+												}
 											}
 
 
