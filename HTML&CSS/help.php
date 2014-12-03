@@ -53,11 +53,14 @@
 			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
 
                 	
-               <li>How to create an account?</li>                
+               <li>How to create an account?</li>    
+               	<a href="signup.php">        click here to sign up </a>            
                <li>How to reserve a ticket?</li>
+               	<a href="UpcomingEvent.php">        click here to browse all events, select the one you like, and reserve button will be on the event detail page</a> 
                <li>What if i forget my password?</li>
+                <a href="lostpassword.php">        click here to recover your password </a>
                <li>How to contact administrator?</li>
-               <a href="contactus.php"> contact us </a>
+               <a href="contactus.php">        click here to submit an inquiry </a>
                 
                </div>
   
