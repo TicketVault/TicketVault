@@ -88,6 +88,7 @@
 		   if (mysqli_num_rows($result) > 0) {
 		   
 		   	echo "<li><a href=".'"'."cancel.php?eventName=".$eventname.'"'." >cancel</a></li>";
+			echo "<li><a href=".'"'."payment.php?eventName=".$eventname.'"'." >make payment</a></li>";
 		   }
 		   
 		   else {

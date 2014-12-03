@@ -41,10 +41,6 @@
 	
 	<section id="main" class="container">
 	
-		<header>
-			<h2>Make Payment</h2>
-		</header>
-	
 	<?php
 		session_start();
 		$username = $_SESSION['loginuser'];
