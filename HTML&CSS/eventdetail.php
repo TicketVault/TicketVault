@@ -101,7 +101,7 @@
 		   $SQLString = "SELECT * FROM favorite WHERE EventID='$EventID' AND Username='$UNE'";
 		   $result = mysqli_query($dbhandle, $SQLString);
 		   
-		   if (mysqli_num_rows($result) < 0) {
+		   if (mysqli_num_rows($result) <= 0) {
 			
 				echo "<li><a href=".'"'."bookmark.php?EVENTID=".$EventID.'"'." >bookmark</a></li>";
 			}
