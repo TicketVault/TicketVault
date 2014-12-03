@@ -57,7 +57,7 @@
                <li>How to reserve a ticket?</li>
                <li>What if i forget my password?</li>
                <li>How to contact administrator?</li>
-               <li><a href="contactus.php"> </a></li>
+               <a href="contactus.php"> contact us </a>
                 
                </div>
   

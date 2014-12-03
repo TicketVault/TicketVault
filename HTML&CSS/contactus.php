@@ -60,7 +60,7 @@
 				 <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Email： </td>
                   <td width="80" align="left" bgcolor="#FFFFFF">
-                  <input name="email" type="text" value="" placeholder="Please enter event name"/readonly>
+                  <input name="email" type="text" value="" placeholder="Please enter event name"/>
                   </td>
                 </tr>
 
