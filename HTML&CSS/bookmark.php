@@ -14,6 +14,6 @@
 		
 	$result = mysqli_query($dbhandle, $SQLString);
 	
-	header("Location: profile.php");/*change to favorite listing*/
+	header("Location: favorevents.php");/*change to favorite listing*/
 	die();
 ?>

@@ -10,7 +10,8 @@
 				echo "<ul>";
 				echo "<li><a href=".'"'."http://ticketvault.cu.cc".'"'." >Home</a></li>";
 				echo "<li><a href=".'"'."hotevents.php".'"'." >Hot Events</a></li>";
-				echo "<li><a href=".'"'."UpcomingEvent.php".'"'." >Upcoming Event</a></li>";
+				echo "<li><a href=".'"'."UpcomingEvent.php".'"'." >Upcoming Events</a></li>";
+				echo "<li><a href=".'"'."favorevents.php".'"'." >Favorite Events</a></li>";
 				echo "<li><a href=".'"'."profile.php".'"'." >Profile</a></li>";
 				echo "<li><a href=".'"'."search.html".'"'." class=".'"'."button".'"'.">Search</a></li>";
 
@@ -55,6 +56,7 @@
 				echo "<li><a href=".'"'."http://ticketvault.cu.cc".'"'." >Home</a></li>";
 				echo "<li><a href=".'"'."hotevents.php".'"'." >Hot Events</a></li>";
 				echo "<li><a href=".'"'."UpcomingEvent.php".'"'." >Upcoming Event</a></li>";
+				echo "<li><a href=".'"'."favorevents.php".'"'." >Favorite Events</a></li>";
 				echo "<li><a href=".'"'."profile.php".'"'." >Profile</a></li>";
 				echo "<li><a href=".'"'."php/Logout.php".'"'." class=".'"'."button".'"'.">logout</a></li>";
 				echo "<li><a href=".'"'."help.php".'"'." >Help</a></li>";
