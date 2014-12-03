@@ -128,6 +128,13 @@
                 </tr>
                 
                 <tr>
+                  <td width="20%" align="right" bgcolor="#FFFFFF">Event ID： </td>
+                  <td width="80%" align="left" bgcolor="#FFFFFF">
+                  <input name="eventID" type="text" value="<?php echo $row['EventID']; ?>" class="formBorder" readonly/>
+                  </td>
+                </tr>
+                
+                <tr>
                   <td width="20%" align="right" bgcolor="#FFFFFF">Event name： </td>
                   <td width="80%" align="left" bgcolor="#FFFFFF">
                   <input name="eventname" type="text" value="<?php echo $row['Eventname']; ?>" class="formBorder" readonly/>
