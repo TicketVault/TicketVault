@@ -25,19 +25,6 @@
     	
     	header("Location: success.php");
 	} 	   
+	die();
 
-	/*test*/
-	
-	function printErr ($_err) {
- 
- 		
- 		echo '<html>
- 				<head>
- 					<meta http-equiv="refresh" content="3;url=UpcomingEvent.php" />
- 				</head>
- 				<body>';
-     	echo "$_err";
- 		die();
- 	
- 	}
 ?>

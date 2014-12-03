@@ -4,9 +4,8 @@
 
 	include('php/Base.php');
 	$dbhandle = database_connect();
-	mysqli_query($dbhandle,"USE u907917272_cs307");
 	
-	$eventID=$_POST['EVENTID'];
+	$eventID=$_GET['eventID'];
 	session_start();
 	$username=$_SESSION['loginuser'];
 	
@@ -15,6 +14,6 @@
 		
 	$result = mysqli_query($dbhandle, $SQLString);
 	
-	header("Location: profile.php");
+	header("Location: profile.php");/*change to */
 	die();
 ?>

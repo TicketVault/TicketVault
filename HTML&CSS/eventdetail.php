@@ -97,16 +97,17 @@
 		   }  
 		   
 		   /*bookmark*/
-		   
+   
 		   $SQLString = "SELECT * FROM favorite WHERE EventID='$EventID' AND Username='$UNE'";
 		   $result = mysqli_query($dbhandle, $SQLString);
 		   
-		   if (mysqli_num_rows($result) <= 0) {
-			
-				echo "<li><a href=".'"'."bookmark.php?EVENTID=".$EventID.'"'." >bookmark</a></li>";
+		   if (mysqli_num_rows($result) > 0) {
+			   
+			   echo "<li><a href=".'"'."unbookmark.php?eventID=".$EventID.'"'." >unbookmark</a></li>";	
+				
 			}
 			else {
-				echo "<li><a href=".'"'."unbookmark.php?EVENTID=".$EventID.'"'." >unbookmark</a></li>";
+				echo "<li><a href=".'"'."bookmark.php?eventID=".$EventID.'"'." >bookmark</a></li>";
 			}
     }
 ?> 

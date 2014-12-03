@@ -44,7 +44,7 @@
                             <ul class="actions vertical small">
                             	<li> <a href="profile(editMode).php">#Edit Your Profile</a></li>
                             	<li> <a href="userticket.php">#View your booked event</a></li>
-
+								
                             </ul>
   
 <?php
