@@ -84,6 +84,8 @@ for(i=1;i<103;i++){
                     (response, data, error) in
                     var output = NSString(data: data, encoding: NSUTF8StringEncoding) // new output variable
             }
+            sleep(1)
+
         }
         //datastring[match].writeToFile("data.txt", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
         datastring.replaceRange(match, with: "")
