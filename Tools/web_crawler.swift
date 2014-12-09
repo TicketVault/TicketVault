@@ -10,10 +10,12 @@ import Foundation
 //Setup baseurl
 var i = 0;
 var baseurl = "https://boilerlink.purdue.edu/Organizations?SearchType=None&SelectedCategoryId=0&CurrentPage="
+var inserturl = "http://ticketvault.cu.cc/php/tools.php?orz="
 var index = 0
 var targeturl:String
 var key = "target="+"\u{0022}"+"_self"+"\u{0022}"+">"
 let myRegex = "[t][a][r][g][e][t][=][\u{0022}][_][s][e][l][f][\u{0022}][>](.){1,}[>]"
+let remove_extra = "[(](.){1,}[)]"
 var key_length = countElements(key)
 var j = 0;
 var m = 0;
@@ -23,9 +25,9 @@ var organizationsName:String
 for(i=1;i<103;i++){
     index = i
     targeturl = baseurl + String(index)
-    println(targeturl)
-    let targeturl_NSURL = NSURL(string:targeturl);
-    let data = NSData(contentsOfURL: targeturl_NSURL!, options: nil, error: nil)
+    //println(targeturl)
+    var targeturl_NSURL = NSURL(string:targeturl);
+    var data = NSData(contentsOfURL: targeturl_NSURL!, options: nil, error: nil)
     var datastring_NSString = NSString(data: data!, encoding: NSUTF8StringEncoding)
     //println(datastring_NSString)
     var datastring = String(datastring_NSString!)
@@ -36,15 +38,58 @@ for(i=1;i<103;i++){
         organizationsName.replaceRange(remove!, with: "")
         remove = organizationsName.rangeOfString("</a>", options:nil)
         organizationsName.replaceRange(remove!, with: "")
-        println(organizationsName)
+        
+        remove = organizationsName.rangeOfString("360&#176;", options:nil)
+        if(remove != nil){
+            organizationsName.replaceRange(remove!, with: "")
+        }
+        
+        remove = organizationsName.rangeOfString("&#39;s", options:nil)
+        if(remove != nil){
+            organizationsName.replaceRange(remove!, with: "")
+        }
+        
+        remove = organizationsName.rangeOfString("&#39;", options:nil)
+        if(remove != nil){
+            organizationsName.replaceRange(remove!, with: "")
+        }
+        
+        remove = organizationsName.rangeOfString("&quot;", options:nil)
+        if(remove != nil){
+            organizationsName.replaceRange(remove!, with: "")
+        }
+        
+        remove = organizationsName.rangeOfString("&quot;", options:nil)
+        if(remove != nil){
+            organizationsName.replaceRange(remove!, with: "")
+        }
+
+        remove = organizationsName.rangeOfString(remove_extra, options: .RegularExpressionSearch)
+        if(remove != nil){
+            organizationsName.replaceRange(remove!, with: "")
+        }
+
+        if(organizationsName=="Manage Your Interests"||organizationsName=="View Recommended Organizations"){
+        }else{
+            //println(organizationsName)
+            targeturl = inserturl + organizationsName;
+            println(targeturl);
+            let url = NSURL(string: inserturl)
+            let request = NSMutableURLRequest(URL: url!)
+            request.HTTPMethod = "POST"
+            request.HTTPBody = organizationsName.dataUsingEncoding(NSUTF8StringEncoding)
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+                data, response, error in
+                if error != nil {
+                    println("error=\(error)")
+                    return
+                }
+            }
+            task.resume()
+
+            println(url)
+        }
         //datastring[match].writeToFile("data.txt", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
-        datastring.replaceRange(match, with: " ")
+        datastring.replaceRange(match, with: "")
     }
 }
-/*
-let myStringToBeMatched = "ThisIsMyString ThisIsMyString"
-let myRegex = "ing"
-if var match = myStringToBeMatched.rangeOfString(myRegex, options: .RegularExpressionSearch){
-    println("\(myStringToBeMatched) is matching!")
-    println(myStringToBeMatched[match])
-}*/
