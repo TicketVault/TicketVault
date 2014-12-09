@@ -72,22 +72,18 @@ for(i=1;i<103;i++){
         if(organizationsName=="Manage Your Interests"||organizationsName=="View Recommended Organizations"){
         }else{
             //println(organizationsName)
-            targeturl = inserturl + organizationsName;
-            println(targeturl);
-            let url = NSURL(string: inserturl)
-            let request = NSMutableURLRequest(URL: url!)
+            println("Succeed: " + organizationsName);
+            println("==========Inserting=========");
+            var bodyData = "orz=" + organizationsName //To get them in php: $_POST['name']
+            let URL: NSURL = NSURL(string:inserturl)!
+            let request:NSMutableURLRequest = NSMutableURLRequest(URL:URL)
             request.HTTPMethod = "POST"
-            request.HTTPBody = organizationsName.dataUsingEncoding(NSUTF8StringEncoding)
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-                data, response, error in
-                if error != nil {
-                    println("error=\(error)")
-                    return
-                }
+            request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+                {
+                    (response, data, error) in
+                    var output = NSString(data: data, encoding: NSUTF8StringEncoding) // new output variable
             }
-            task.resume()
-
-            println(url)
         }
         //datastring[match].writeToFile("data.txt", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
         datastring.replaceRange(match, with: "")
