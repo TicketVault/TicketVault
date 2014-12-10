@@ -10,6 +10,12 @@
 	$EventID = $row['EventID'];
 	$UNE = $_SESSION['loginuser'];
 	
+	$SQLString = "SELECT * FROM ticket WHERE EventID = '$EventID' AND Username='$UNE'";
+	$result = mysqli_query($dbhandle, $SQLString);
+	$row2 = mysqli_fetch_assoc($result);
+	$Quantity = (int)$row2['Quantity'];
+
+	
 	$SQLString = "DELETE FROM ticket WHERE EventID='$EventID' AND Username='$UNE'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	
@@ -17,8 +23,8 @@
 	
 	
 		$RemainingTickets = (int)$row['RemainingTickets'];
-		$NRT = $RemainingTickets + 1;
 		
+		$NRT = $RemainingTickets + $Quantity;
 		
 		$SQLString = "UPDATE event SET RemainingTickets = '$NRT' WHERE Eventname = '$eventname'" ;
  		$result = mysqli_query($dbhandle, $SQLString);

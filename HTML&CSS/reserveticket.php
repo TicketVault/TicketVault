@@ -109,6 +109,39 @@
                   					<input name="last name" type="text" value="<?php echo $row2['RemainingTickets']; ?>" class="formBorder" readonly/>
                   					</td>
                 					</tr>
+									
+									<tr>
+                  					<td width="28%" align="right" bgcolor="#FFFFFF">Quantity： </td>
+                  					<td width="72%" align="left" bgcolor="#FFFFFF">
+                  						<div class="row uniform half collpase-at-2">
+                  							<div class="2u">
+  												<SELECT NAME="Quantity" >
+        										<OPTION VALUE="1" SELECTED>1</OPTION>
+        										<OPTION VALUE="2">2</OPTION>
+        										<OPTION VALUE="3">3</OPTION>
+        										<OPTION VALUE="4">4</OPTION>
+        										<OPTION VALUE="5">5</OPTION>
+        										<OPTION VALUE="6">6</OPTION>
+        										<OPTION VALUE="7">7</OPTION>
+        										<OPTION VALUE="8">8</OPTION>
+        										<OPTION VALUE="9">9</OPTION>
+        										<OPTION VALUE="10">10</OPTION>
+												<OPTION VALUE="11">11</OPTION>
+												<OPTION VALUE="12">12</OPTION>
+												<OPTION VALUE="13">13</OPTION>
+												<OPTION VALUE="14">14</OPTION>
+												<OPTION VALUE="15">15</OPTION>
+												<OPTION VALUE="16">16</OPTION>
+												<OPTION VALUE="17">17</OPTION>
+												<OPTION VALUE="18">18</OPTION>
+												<OPTION VALUE="19">20</OPTION>
+      											</SELECT>
+                 					 		</div>
+
+                    					</div>
+                					</td>
+                					</tr>
+									
 								</table>
                                 
                                 <h3>User Information</h3>

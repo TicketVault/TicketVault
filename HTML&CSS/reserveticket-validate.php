@@ -8,6 +8,8 @@
 	
 	$eventname = $_POST['eventname'];
 			
+	$Quantity = $_POST['Quantity'];
+			
 	$SQLString = "SELECT * FROM event WHERE Eventname = '$eventname'";
 	$result = mysqli_query($dbhandle, $SQLString);
 	$row = mysqli_fetch_assoc($result);
@@ -15,31 +17,41 @@
 	//echo $row['RemainingTickets'];
 	//$eventName = $_POST['eventname'];
 	
+
  	if ($row['RemainingTickets'] < 1) {
  			printErr ("No tickets available this time, please check back later.");
  	}
- 		
+ 	
  	else {
 			$RemainingTickets = (int)$row['RemainingTickets'];
-			$NRT = $RemainingTickets - 1;
-			$SQLupdate = "UPDATE event SET RemainingTickets = '$NRT' WHERE Eventname = '$eventname'" ;
- 			$result_update = mysqli_query($dbhandle, $SQLupdate);
+			$NRT = $RemainingTickets - $Quantity;
+			
+			if ($NRT < 0) {
+				printErr("Number of Tickets booked exceeding number of remainding tickets!");
+			}
+			
+			else {
+			
+				$SQLupdate = "UPDATE event SET RemainingTickets = '$NRT' WHERE Eventname = '$eventname'" ;
+ 				$result_update = mysqli_query($dbhandle, $SQLupdate);
  			
-			$SoldTicket = (int)$row['SoldTickets'];
-			$NRT = $SoldTicket + 1;
-			$SQLupdate = "UPDATE event SET SoldTickets = '$NRT' WHERE Eventname = '$eventname'" ;
-			$result_update = mysqli_query($dbhandle, $SQLupdate);
+				$SoldTicket = (int)$row['SoldTickets'];
+				$NRT = $SoldTicket + $Quantity;
+				$SQLupdate = "UPDATE event SET SoldTickets = '$NRT' WHERE Eventname = '$eventname'" ;
+				$result_update = mysqli_query($dbhandle, $SQLupdate);
 
 			
-			$eventID = $row['EventID'];
-			$ticketID = hash("md5",rand());		
+				$eventID = $row['EventID'];
+				$ticketID = hash("md5",rand());		
 
-			session_start();
-			$username = $_SESSION['loginuser'];
+				session_start();
+				$username = $_SESSION['loginuser'];
 			
-			$SQLString = "INSERT INTO ticket (TicketID,EventID,Username)
-			VALUES( '$ticketID','$eventID', '$username')";
-			mysqli_query($dbhandle, $SQLString);
+				$SQLString = "INSERT INTO ticket (TicketID,EventID,Username,Quantity)
+				VALUES( '$ticketID','$eventID', '$username', '$Quantity')";
+				mysqli_query($dbhandle, $SQLString);
+			}
+			
  	}
  	
  	header("Location: TicketSuccess.php");
