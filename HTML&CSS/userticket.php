@@ -56,6 +56,7 @@
 												<th>Organization name</th>
                                                 <th>Events Description</th>
 												<th>Price</th>
+												<th>Number of tickets booked</th>
 											</tr>
 										</thead>
 									<html><head><title>MySQL Table Viewer</title></head><body>
@@ -83,6 +84,10 @@
 												echo '<td>';
 												echo $row_event['Price'];
 												echo '</td>';
+												echo '<td>';
+												echo $row['Quantity'];
+												echo '</td>';
+
 												echo '</tr>';
 											
 											}
