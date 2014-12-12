@@ -60,7 +60,7 @@
 											$username = $_SESSION['loginuser'];
 											$dbhandle = database_connect();	
 											mysqli_query($dbhandle,"USE u907917272_cs307");											
-											$result = mysqli_query($dbhandle, "SELECT * FROM event ORDER BY Eventname");
+											$result = mysqli_query($dbhandle, "SELECT * FROM event ORDER BY Date DESC");
 											while($row=mysqli_fetch_array($result)){
 												echo '<tr>';
 												echo '<td>';
